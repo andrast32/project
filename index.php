@@ -38,6 +38,7 @@
 
         <!-- icon -->
         <link href="templates/UI_user/img/icon.png" rel="icon">
+        <link href="templates/UI_user/img/icon.png" rel="apple-touch-icon">
 
         <!-- fonts -->
         <link href="https://fonts.googleapis.com" rel="preconnect">

@@ -8,7 +8,7 @@
     <head>
         <meta charset="utf-8">
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
-        <title>Kebon Dalem | Perpus Digital</title>
+        <title>Kebon Dalem | Perpus Digital | Daftar Buku</title>
         <meta content="Kebon Dalem | Perpus Digital" name="description">
         <meta content="Kebon Dalem | Perpus Digital" name="keywords">
 

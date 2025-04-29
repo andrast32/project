@@ -9,7 +9,7 @@
 
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Kebon Dalem | Perpus Digital</title>
+        <title>Kebon Dalem | Perpus Digital | Login</title>
 
         <link href="../templates/UI_user/img/icon.png" rel="icon">
 
