@@ -161,7 +161,7 @@
                             <div class="col-sm-12 col-md-5 col-lg-4 col-xl-4 order-lg-2 offset-xl-1 mb-4">
                                 <div class="img-wrap text-center text-md-left" data-aos="fade-up" data-aos-delay="100">
                                     <div class="img">
-                                        <img src="templates/UI_user/img/bg3.jpg" alt="circle image" class="img-fluid">
+                                        <img src="templates/UI_user/img/bg1.jpg" alt="circle image" class="img-fluid">
                                     </div>
                                 </div>
                             </div>
@@ -203,7 +203,7 @@
 
                         <div class="col-lg-5">
                             <div class="images-overlap">
-                                <img src="templates/UI_user/img/foto2.jpg" alt="student" class="img-fluid img-1" data-aos="fade-up">
+                                <img src="templates/UI_user/img/bg4.jpg" alt="student" class="img-fluid img-1" data-aos="fade-up">
                             </div>
                         </div>
 
@@ -256,7 +256,7 @@
             <div class="copyright d-flex flex-column flex-md-row align-items-center justify-content-md-between">
                 <p>© <span>Copyright</span> <strong class="px-1 sitename">Perpustakaan</strong><span>| Digital</span></p>
                 <div class="credits">
-                Designed by <a href="https://kebondalem.sch.id/" target="_blank">Kebon Dalem</a>
+                Designed by <a href="#">Kelompok 2</a>
                 </div>
             </div>
             </div>

@@ -3,7 +3,7 @@
     $host   = 'localhost';
     $user   = 'root';
     $pass   = '';
-    $db     = 'perpus_digital';
+    $db     = 'cp';
 
     $mysqli = new mysqli($host, $user, $pass, $db);
 

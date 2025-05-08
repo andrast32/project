@@ -15,37 +15,37 @@
             $title = "Kebon Dalem | Perpus Digital | Data Buku";
             $h1 = "Data Buku";
             break;
-        case 'data_kunjungan_anggota':
+        case 'kunjungan_anggota':
             $title = "Kebon Dalem | Perpus Digital | Kunjungan Anggota";
             $h1 = "Kunjungan Anggota";
             break;
-        case 'data_kunjungan_guru':
+        case 'kunjungan_guru':
             $title = "Kebon Dalem | Perpus Digital | Kunjungan Guru";
             $h1 = "Kunjungan Guru";
             break;
-        case 'data_peminjaman_anggota':
+        case 'peminjaman_anggota':
             $title = "Kebon Dalem | Perpus Digital | Peminjaman Anggota";
             $h1 = "Peminjaman Anggota";
             break;
-        case 'data_peminjaman_guru':
+        case 'peminjaman_guru':
             $title = "Kebon Dalem | Perpus Digital | Peminjaman Guru";
             $h1 = "Peminjaman Guru";
             break;
-        case 'data_pustakawan':
-            $title = "Kebon Dalem | Perpus Digital | Data Pustakawan";
-            $h1 = "Data Pustakawan";
+        case 'pustakawan':
+            $title = "Kebon Dalem | Perpus Digital | Pustakawan";
+            $h1 = "Pustakawan";
             break;
-        case 'data_guru':
-            $title = "Kebon Dalem | Perpus Digital | Data Guru";
-            $h1 = "Data Guru";
+        case 'guru':
+            $title = "Kebon Dalem | Perpus Digital | Guru";
+            $h1 = "Guru";
             break;
-        case 'data_anggota':
-            $title = "Kebon Dalem | Perpus Digital | Data Anggota";
-            $h1 = "Data Anggota";
+        case 'anggota':
+            $title = "Kebon Dalem | Perpus Digital | Anggota";
+            $h1 = "Anggota";
             break;
-        case 'data_kelas':
-            $title = "Kebon Dalem | Perpus Digital | Data Kelas";
-            $h1 = "Data Kelas";
+        case 'kelas':
+            $title = "Kebon Dalem | Perpus Digital | Kelas";
+            $h1 = "Kelas";
             break;
         default:
             $title = "Kebon Dalem | Perpus Digital | Dashboard";
@@ -87,56 +87,57 @@
 
     </div>
 
-<!-- export database start -->
-<div class="modal fade" id="export-db">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Backup Database</h5>
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-            </div>
-            <div class="modal-body">
-                <a href="/project/database/backup.sql" class="btn btn-success float-right">
-                    <i class="fas fa-download"></i>
-                    Download Database
-                </a>
+    <!-- export database start -->
+    <div class="modal fade" id="export-db">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h5 class="modal-title">Backup Database</h5>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <div class="modal-body">
+                    <a href="/project/database/backup.sql" class="btn btn-success float-right">
+                        <i class="fas fa-download"></i>
+                        Download Database
+                    </a>
+                </div>
+
             </div>
         </div>
     </div>
-</div>
-<!-- export database end -->
+    <!-- export database end -->
 
+    <!-- Modal Import Database -->
+    <div class="modal fade" id="import-db" tabindex="-1" role="dialog" aria-labelledby="importDbLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <form action="?settings=sql/import" method="POST" enctype="multipart/form-data">
+                <div class="modal-content">
 
-
-<!-- Modal Import Database -->
-<div class="modal fade" id="import-db" tabindex="-1" role="dialog" aria-labelledby="importDbLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <form action="?settings=sql/import" method="POST" enctype="multipart/form-data">
-      <div class="modal-content">
-        <div class="modal-header bg-info">
-          <h5 class="modal-title" id="importDbLabel">Import Database</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
+                    <div class="modal-header bg-info">
+                        <h5 class="modal-title" id="importDbLabel">Import Database</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
         
-        <div class="modal-body">
-          <div class="form-group">
-            <label for="file">Pilih file SQL</label>
-            <input type="file" name="file" id="file" class="form-control" required accept=".sql">
-          </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="file">Pilih file SQL</label>
+                            <input type="file" name="file" id="file" class="form-control" required accept=".sql">
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                        <button type="submit" class="btn btn-primary">Import</button>
+                    </div>
+
+                </div>
+            </form>
         </div>
-
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
-          <button type="submit" class="btn btn-primary">Import</button>
-        </div>
-
-      </div>
-    </form>
-  </div>
-</div>
-
+    </div>
 
     <?php
     include "settings/ui/footer.php";

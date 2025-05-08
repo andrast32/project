@@ -122,7 +122,7 @@
                 <div class="copyright d-flex flex-column flex-md-row align-items-center justify-content-md-between">
                     <p>© <span>Copyright</span> <strong class="px-1 sitename">Perpustakaan</strong><span>| Digital</span></p>
                     <div class="credits">
-                        Designed by <a href="https://kebondalem.sch.id/" target="_blank">Kebon Dalem</a>
+                        Designed by <a href="#">Kelompok 2</a>
                     </div>
                 </div>
 
