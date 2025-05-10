@@ -68,7 +68,7 @@
             }
             $stmt->close();
 
-        } elseif (isset($_POST['delete_a'])) {
+        } elseif (isset($_POST['delete_ka'])) {
             $stmt = $mysqli->prepare("DELETE FROM kunjungan_anggota");
 
             if ($stmt->execute()) {
@@ -109,6 +109,7 @@
                 <div class="card">
 
                     <div class="card-header">
+                        
                         <h3 class="card-title">
                             <?php echo $h1?> |
                             <button class="btn btn-info" data-toggle="modal" data-target="#add">
@@ -116,12 +117,13 @@
                             </button>
                         </h3>
 
-                        <button class="btn btn-danger float-right" onclick="delete_a()">
+                        <button class="btn btn-danger float-right" onclick="delete_ka()">
                             <i class="fas fa-trash"></i>
                         </button>
                     </div>
 
                     <div class="card-body">
+
                         <?php if ($item_anggota): ?>
                             <div class="col-md-6" style="margin: 0 15rem;">
                                 <div class="card-body">
@@ -213,6 +215,7 @@
                                 <?php } ?>
                             </tbody>
                         </table>
+
                     </div>
 
                 </div>
@@ -280,12 +283,12 @@
     });
 </script>
 
-<form action="post" id="delete-ka">
-    <input type="hidden" name="delete_a" id="1">
+<form method="post" id="delete-ka">
+    <input type="hidden" name="delete_ka" id="1">
 </form>
 
 <script>
-    function delete_a() {
+    function delete_ka() {
         Swal.fire({
             title: 'Apakah Anda yakin?',
             text: "Data kunjungan anggota akan dihapus!",
@@ -296,7 +299,7 @@
             confirmButtonText: 'Ya, hapus!'
         }).then((result) => {
             if (result.isConfirmed) {
-                document.getElementById('delete-a').submit();
+                document.getElementById('delete-ka').submit();
             }
         });
     }

@@ -11,13 +11,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Kebon Dalem | Perpus Digital | Login</title>
 
-        <link href="../templates/UI_user/img/icon.png" rel="icon">
+        <link href="/project/templates/UI_user/img/icon.png" rel="icon">
 
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
 
-        <link rel="stylesheet" href="../templates/UI_admin/plugins/fontawesome-free/css/all.min.css">
-        <link rel="stylesheet" href="../templates/UI_admin/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
-        <link rel="stylesheet" href="../templates/UI_admin/dist/css/adminlte.min.css">
+        <link rel="stylesheet" href="/project/templates/UI_admin/plugins/fontawesome-free/css/all.min.css">
+        <link rel="stylesheet" href="/project/templates/UI_admin/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+        <link rel="stylesheet" href="/project/templates/UI_admin/dist/css/adminlte.min.css">
 
     </head>
 
@@ -31,7 +31,7 @@
                     <span>Perpustakaan Digital</span>
                 </a>
                 <br>
-                <img src="../templates/UI_user/img/logo.png" alt="logo" style="width: 150px; margin: 0.5rem 0;">
+                <img src="/project/templates/UI_user/img/logo.png" alt="logo" style="width: 150px; margin: 0.5rem 0;">
             </div>
 
             <div class="card">
@@ -66,7 +66,7 @@
                         <div class="row">
 
                             <div class="col-6">
-                                <a href="../index.php" class="btn btn-block">
+                                <a href="/project/index.php" class="btn btn-block">
                                     Kembali <i class="fas fa-backward"></i>
                                 </a>
                             </div>
@@ -89,6 +89,14 @@
             </div>
 
         </div>
+
+        <script src="/project/templates/js/show.js"></script>
+
+        <script src="/project/templates/UI_admin/plugins/jquery/jquery.min.js"></script>
+        <script src="/project/templates/UI_admin/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="/project/templates/UI_admin/dist/js/adminlte.min.js"></script>
+        <script src="/project/templates/UI_admin/plugins/sweetalert2/sweetalert2.min.js"></script>
+        <script src="/project/templates/UI_admin/plugins/toastr/toastr.min.js"></script>
 
     </body>
 
