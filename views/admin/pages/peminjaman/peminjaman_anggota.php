@@ -332,8 +332,8 @@
                             <thead class="bg-navy">
                                 <tr align="center">
                                     <th>No</th>
-                                    <th style="width: 25%;">Nama anggota</th>
-                                    <th>Judul buku</th>
+                                    <th style="width: 20%;">Nama anggota</th>
+                                    <th style="width: 25%;">Judul buku</th>
                                     <th>tanggal pinjam</th>
                                     <th>rencana tanggal kembali</th>
                                     <th>tanggal kembali</th>
@@ -360,8 +360,9 @@
                                             </button>
                                         </td>
                                         <td>
-                                            <?php echo $data['kode_buku']?> |
-                                            <?php echo $data['judul']?>
+                                            <button class="btn" data-toggle="modal" data-target="#buku-<?php echo $data['id_buku']?>" style="text-align: left;">
+                                                <?php echo $data['judul']?>
+                                            </button>
                                         </td>
                                         <td align="center"><?php echo $data['tanggal_pinjam']?></td>
                                         <td align="center"><?php echo $data['tanggal_kembali']?></td>
@@ -386,6 +387,74 @@
         </div>
     </div>
 </section>
+
+<?php
+    $b = $mysqli->query("SELECT * FROM data_buku ORDER BY id_buku");
+    while ($db = mysqli_fetch_array($b)) {
+?>
+    <div class="modal fade" id="buku-<?php echo $db['id_buku']?>">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h3 class="modal-title">Data Buku</h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <div class="modal-body">
+                    <div class="card card-widget widget-user">
+
+                        <div class="widget-user-header" style="background: url('../../templates/ui_user/img/bg.jpg');">
+                            <h4 class="text-left text-white" style="text-transform: capitalize; font-weight: bold;"><?php echo $db['judul'] ?></h4>
+                            <h4 class="text-left text-white" style="text-transform: capitalize; font-weight: bold;"><?php echo $db['kode_buku'] ?></h4>
+                        </div>
+
+                        <div class="widget-user-image">
+                            <img src="../../templates/uploads/buku/<?php echo $db['foto']?>" alt="Avatar" class="img-circle">
+                        </div>
+
+                        <div class="card-footer">
+                            <div class="row">
+
+                                <div class="col-sm-4 border-right">
+                                    <div class="description-block">
+                                        <h5 class="description-header">
+                                            Penulis
+                                        </h5>
+                                        <span class="description-text"><?php echo $db['penulis'] ?></span>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-4 border-right">
+                                    <div class="description-block">
+                                        <h5 class="description-header">
+                                            Penerbit
+                                        </h5>
+                                        <span class="description-text"> <?php echo $db['penerbit'] ?> </span>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-4 border-right">
+                                    <div class="description-block">
+                                        <h5 class="description-header">
+                                            Kode rak
+                                        </h5>
+                                        <span class="description-text"> <?php echo $db['kode_rak'] ?> </span>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+<?php }?>
 
 <div class="modal fade" id="add">
 <div class="modal-dialog">

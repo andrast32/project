@@ -82,7 +82,7 @@
                     </form>
 
                     <p class="mb-1 mt-2">
-                        <a href="forgot-password.html">I forgot my password</a>
+                        <a href="https://api.whatsapp.com/send?phone=6281224034906=&text= hallo pak Saya lupa password akun perpustakaan saya berikut data saya sesuai dengan kartu anggota %0A%0A Id  : %0A NIS : %0A Nama : %0A Kelas : %0A No telp : %0A%0A Sekian Terimakasih" class="nav-link" target="_blank"">I forgot my password</a>
                     </p>
 
                 </div>

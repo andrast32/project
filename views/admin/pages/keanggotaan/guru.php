@@ -49,6 +49,12 @@
 
                                             <br>
 
+                                            <button class="btn btn-success mb-2 mt-2" data-toggle="modal" data-target="#print-<?php echo $data['id_guru']?>">
+                                                <i class="fas fa-print"></i>
+                                            </button>
+
+                                            <br>
+
                                             <button class="btn btn-warning mt-2 mb-2" onclick="resetPassword(<?php echo $data['id_guru']?>)">
                                                 <i class="fas fa-key"></i>
                                             </button>
@@ -70,6 +76,66 @@
         </div>
     </div>
 </section>
+
+<?php
+    $guru = $mysqli->query("SELECT * FROM guru");
+    while ($data = mysqli_fetch_array($guru)) {
+?>
+<div class="modal fade" id="print-<?php echo $data['id_guru'] ?>">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h5 class="modal-title">Kartu Anggota - <?php echo $data['nama_guru'] ?></h5>
+                <button type="button" class="close" data-dismiss="modal">
+                    <span>&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body" id="print-area-<?php echo $data['id_guru'] ?>">
+                <div style="width: 12cm; height: 6.5cm; border: 2px solid #333; padding: 20px; font-family: Arial, sans-serif; background: #fff; position: relative;">
+
+                    <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                        <img src="/project/templates/UI_user/img/logo.png" width="50" style="margin-right: 10px;">
+                        <div>
+                            <div style="font-size: 14px; font-weight: bold;">KARTU ANGGOTA PERPUSTAKAAN</div>
+                            <div style="font-size: 12px;">TK SD SMA Kebon Dalem</div>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 15px;">
+                        
+                        <div style="font-size: 13px; line-height: 1.5;">
+                            <p><strong>NIP:</strong> <?php echo $data['nip'] ?></p>
+                            <p><strong>Nama:</strong> <?php echo $data['nama_guru'] ?></p>
+                            <p><strong>Alamat:</strong> <?php echo $data['alamat'] ?></p>
+                            <p><strong>No. Telp:</strong> <?php echo $data['no_telp'] ?></p>
+                        </div>
+
+                        <div>
+                            <img src="../../templates/uploads/guru/<?php echo $data['foto'] ?>" style="width: 100px; height: 110px; object-fit: cover; border: 1.5px solid #333;">
+                        </div>
+                    </div>
+
+                    <!-- Footer Tanggal -->
+                    <div style="position: absolute; top: 80px; right: 20px; font-size: 12px; color: #555;">
+                        ID: <?php echo $data['id_guru'] ?>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button onclick="printDiv('print-area-<?php echo $data['id_guru'] ?>')" class="btn btn-primary">
+                    <i class="fas fa-print"></i> Cetak
+                </button>
+            </div>
+
+        </div>
+    </div>
+</div>
+<?php } ?>
 
 <div class="modal fade" id="add">
     <div class="modal-dialog">
@@ -194,6 +260,16 @@
 <?php } ?>
 
 <script>
+    function printDiv(divId) {
+        var content = document.getElementById(divId).innerHTML;
+        var original = document.body.innerHTML;
+        document.body.innerHTML = content;
+        window.print();
+        document.body.innerHTML = original;
+    }
+</script>
+
+<script>
     function resetPassword(id_guru) {
         Swal.fire({
             title                   : "Apakah anda yakin?",
@@ -235,23 +311,21 @@
     }
 </script>
 
-<!-- guru start -->
-    <script>
-        function deleteGuru(id_guru) {
-            Swal.fire({
-                title: 'Apakah Anda yakin?',
-                text: "Anda tidak akan dapat mengembalikan data buku yang telah dihapus!",
-                icon: 'warning',
-                showCancelButton: true,
-                confirmButtonColor: '#d33',
-                cancelButtonColor: '#3085d6',
-                confirmButtonText: 'Ya, hapus!',
-                cancelButtonText: 'Batal'
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    window.location.href = "?settings=delete/delete_guru&id_guru=" + id_guru;
-                }
-            });
-        }
-    </script>
-<!-- guru end -->
+<script>
+    function deleteGuru(id_guru) {
+        Swal.fire({
+            title: 'Apakah Anda yakin?',
+            text: "Anda tidak akan dapat mengembalikan data buku yang telah dihapus!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#d33',
+            cancelButtonColor: '#3085d6',
+            confirmButtonText: 'Ya, hapus!',
+            cancelButtonText: 'Batal'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = "?settings=delete/delete_guru&id_guru=" + id_guru;
+            }
+        });
+    }
+</script>

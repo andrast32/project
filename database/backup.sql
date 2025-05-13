@@ -11,9 +11,10 @@ CREATE TABLE `anggota` (
   `foto` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT '',
   `level` enum('anggota') CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   PRIMARY KEY (`id_siswa`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=123410051 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
-INSERT INTO anggota VALUES("8","1921681010","$2y$10$7xhyAM1f0qKKhXFcm6JcxeO/epMxQeHrMG.o.PyLazxaNrCt9Yz/S","sinta aulia cantika putri","1000000018","rumah sinta aulia cantika putri ramdani lestari anggunita","081234567890","1921681001.jpg","anggota");
+INSERT INTO anggota VALUES("8","1921681010","$2y$10$7xhyAM1f0qKKhXFcm6JcxeO/epMxQeHrMG.o.PyLazxaNrCt9Yz/S","sinta aulia cantika putri","1000000017","rumah sinta aulia cantika putri ramdani lestari anggunita","081234567890","1921681001.jpg","anggota");
+INSERT INTO anggota VALUES("123410050","1921681003","$2y$10$sIYHUC7pAnz/Y6KIvMokYuyWm6WeKgNKQwgvtSJCAOuyMKpXl0eQq","aaa","1000000017","aaa","aaa","1921681003.jpg","anggota");
 
 
 DROP TABLE IF EXISTS data_buku;

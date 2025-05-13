@@ -16,6 +16,12 @@
     $jumlah_kunjungan_guru      = $mysqli->query("SELECT * FROM kunjungan_guru");
     $kg                         = mysqli_num_rows($jumlah_kunjungan_guru);
 
+    $jumlah_peminjaman_anggota  = $mysqli->query("SELECT * FROM peminjaman_anggota");
+    $pa                         = mysqli_num_rows($jumlah_peminjaman_anggota);
+
+    $jumlah_peminjaman_guru     = $mysqli->query("SELECT * FROM peminjaman_guru");
+    $pg                         = mysqli_num_rows($jumlah_peminjaman_guru);
+
 ?>
 
     <div class="container-fluid">
@@ -72,7 +78,7 @@
 
                     <div class="inner">
                         <h2>Peminjaman</h2>
-                        <h4><?php echo $ka + $kg ?></h4>
+                        <h4><?php echo $pa + $pg ?></h4>
                     </div>
 
                     <div class="icon">
