@@ -21,6 +21,7 @@
                                     <th>No</th>
                                     <th>Kode Buku</th>
                                     <th>Judul</th>
+                                    <th>Kategori</th>
                                     <th>Penulis</th>
                                     <th>Penerbit</th>
                                     <th>Kode Rak</th>
@@ -40,6 +41,7 @@
                                         <td align="center"><?php echo $no++?></td>
                                         <td align="center"><?php echo $data['kode_buku']?></td>
                                         <td style="width: 50px;"><?php echo $data['judul']?></td>
+                                        <td style="width: 50px;"><?php echo $data['kategori']?></td>
                                         <td style="width: 150px;"><?php echo $data['penulis']?></td>
                                         <td>
                                             <?php echo $data['penerbit']?> <br>
@@ -94,6 +96,18 @@
                         <div class="form-group">
                             <label for="judul">Judul Buku <span class="text-danger">*</span></label>
                             <input type="text" name="judul" id="judul" class="form-control" placeholder="Masukkan Judul Buku" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="kategori">Kategori <span class="text-danger">*</span></label>
+                            <select name="kategori" id="kategori" class="form-control" required>
+
+                                <option value="">Pilih Kategori buku</option>
+                                <option value="Buku Pelajaran">Buku pelajaran</option>
+                                <option value="Komik">Komik</option>
+                                <option value="Novel">Novel</option>
+
+                            </select>
                         </div>
 
                         <div class="form-group">
@@ -190,6 +204,18 @@
                                 <label for="judul">Judul Buku <span class="text-danger">*</span></label>
                                 <input type="text" name="judul" id="judul" class="form-control" value="<?php echo $e['judul']?>" placeholder="Masukkan Judul Buku" required>
                             </div>
+
+                            <div class="form-group">
+                            <label for="kategori">Kategori <span class="text-danger">*</span></label>
+                            <select name="kategori" id="kategori" class="form-control" required>
+
+                                <option value="">Pilih Kategori buku</option>
+                                <option value="Buku Pelajaran" <?php if($e['kategori'] == 'Buku Pelajaran') echo 'selected'; ?> >Buku pelajaran</option>
+                                <option value="Komik" <?php if($e['kategori'] == 'Komik') echo 'selected'; ?> >Komik</option>
+                                <option value="Novel" <?php if($e['kategori'] == 'Novel') echo 'selected'; ?> >Novel</option>
+
+                            </select>
+                        </div>
 
                             <div class="form-group">
                                 <label for="deskripsi">Deskripsi <span class="text-danger">*</span></label>

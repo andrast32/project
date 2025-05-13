@@ -1,8 +1,8 @@
 <?php 
-
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (isset($_POST['kode_buku'])
             && isset($_POST['judul'])
+            && isset($_POST['kategori'])
             && isset($_POST['deskripsi'])
             && isset($_POST['penulis'])
             && isset($_POST['penerbit'])
@@ -11,8 +11,9 @@
             && isset($_POST['stok'])
             && isset($_FILES['foto'])) {
 
-                $kode_buku        = $_POST['kode_buku'];
+                $kode_buku      = $_POST['kode_buku'];
                 $judul          = $_POST['judul'];
+                $judul          = $_POST['kategori'];
                 $deskripsi      = $_POST['deskripsi'];
                 $penulis        = $_POST['penulis'];
                 $penerbit       = $_POST['penerbit'];
@@ -45,8 +46,8 @@
                         </script>
                     ";
                 } else {
-                    $stmt = $mysqli->prepare("INSERT INTO data_buku (kode_buku, judul, deskripsi, penulis,  penerbit, tahun_terbit, kode_rak, stok, foto) VALUES (?,?,?,?,?,?,?,?,?)");
-                    $stmt->bind_param("sssssssss", $kode_buku, $judul, $deskripsi, $penulis, $penerbit, $tahun_terbit, $kode_rak, $stok, $foto);
+                    $stmt = $mysqli->prepare("INSERT INTO data_buku (kode_buku, judul, kategori, deskripsi, penulis,  penerbit, tahun_terbit, kode_rak, stok, foto) VALUES (?,?,?,?,?,?,?,?,?,?)");
+                    $stmt->bind_param("ssssssssss", $kode_buku, $judul, $kategori, $deskripsi, $penulis, $penerbit, $tahun_terbit, $kode_rak, $stok, $foto);
 
                     if ($stmt->execute()) {
 

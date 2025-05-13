@@ -4,6 +4,7 @@
         if (isset($_POST['id_buku'])
             && isset($_POST['kode_buku'])
             && isset($_POST['judul'])
+            && isset($_POST['kategori'])
             && isset($_POST['deskripsi'])
             && isset($_POST['penulis'])
             && isset($_POST['penerbit'])
@@ -14,6 +15,7 @@
                 $id_buku        = $_POST['id_buku'];
                 $kode_buku      = $_POST['kode_buku'];
                 $judul          = $_POST['judul'];
+                $kategori       = $_POST['kategori'];
                 $deskripsi      = $_POST['deskripsi'];
                 $penulis        = $_POST['penulis'];
                 $penerbit       = $_POST['penerbit'];
@@ -23,8 +25,8 @@
                 $foto           = isset($_FILES['foto']) ? $_FILES['foto']['name']: '';
                 $tempFoto       = isset($_FILES['foto']) ? $_FILES['foto']['tmp_name']: '';
 
-                $stmt = $mysqli->prepare("UPDATE data_buku SET kode_buku = ?, judul = ?, deskripsi = ?, penulis = ?, penerbit = ?, tahun_terbit = ?, kode_rak = ?, stok = ? WHERE id_buku = ?");
-                $stmt->bind_param("ssssssssi", $kode_buku, $judul, $deskripsi, $penulis, $penerbit, $tahun_terbit, $kode_rak, $stok, $id_buku);
+                $stmt = $mysqli->prepare("UPDATE data_buku SET kode_buku = ?, judul = ?, kategori = ?, deskripsi = ?, penulis = ?, penerbit = ?, tahun_terbit = ?, kode_rak = ?, stok = ? WHERE id_buku = ?");
+                $stmt->bind_param("sssssssssi", $kode_buku, $judul, $kategori, $deskripsi, $penulis, $penerbit, $tahun_terbit, $kode_rak, $stok, $id_buku);
 
                 if ($stmt->execute()) {
 

@@ -125,7 +125,7 @@
                                         while ($dt_buku = mysqli_fetch_array($buku)) {
                                     ?>
                                         <div class="swiper-slide">
-                                        <img src="templates/uploads/buku/<?php echo $dt_buku['foto']?>" alt="Image" class="img-fluid">
+                                        <img src="templates/uploads/buku/<?php echo $dt_buku['foto']?>" alt="Image" class="img-fluid sm-2">
                                         </div>
                                     <?php } ?>
                                 </div>

@@ -135,18 +135,19 @@
                     <div class="card-body">
 
                         <?php if ($item_anggota): ?>
+
                             <div class="col-md-6" style="margin: 0 15rem;">
                                 <div class="card-body">
                                     <div class="card card-widget widget-user">
                                         <div class="widget-user-header" style="background: url('../../templates/ui_user/img/foto2.jpg');"></div>
-    
+
                                         <div class="widget-user-image">
                                             <img src="../../templates/uploads/anggota/<?php echo htmlspecialchars($item_anggota['foto'])?>" alt="Avatar" class="img-circle">
                                         </div>
-    
+
                                         <div class="card-footer">
                                             <div class="row">
-                                                
+
                                                 <div class="col-sm-4 border-right">
                                                     <div class="description-block">
                                                         <h5 class="description-header">Nama</h5>
@@ -155,7 +156,7 @@
                                                         </span>
                                                     </div>
                                                 </div>
-    
+
                                                 <div class="col-sm-4 border-right">
                                                     <div class="description-block">
                                                         <h5 class="description-header">Kelas</h5>
@@ -165,7 +166,7 @@
                                                         </span>
                                                     </div>
                                                 </div>
-    
+
                                                 <div class="col-sm-4 border-right">
                                                     <div class="description-block">
                                                         <h5 class="description-header">No Telp</h5>
@@ -174,19 +175,19 @@
                                                         </span>
                                                     </div>
                                                 </div>
-                                                
+                        
                                             </div>
 
                                             <?php
-                                                $nis = $item_anggota['nis'];
+                                                $id_siswa = $item_anggota['id_siswa'];
 
                                                 $stmt_pinjam = $mysqli->prepare("
-                                                    SELECT data_buku.judul, data_buku.kode_buku, peminjaman_anggota.id_peminjaman, peminjaman_anggota.tanggal_pinjam, peminjaman_anggota.jumlah 
+                                                    SELECT data_buku.judul, data_buku.kode_buku, peminjaman_anggota.id_peminjaman, peminjaman_anggota.tanggal_pinjam, peminjaman_anggota.tanggal_kembali, peminjaman_anggota.jumlah 
                                                     FROM peminjaman_anggota 
                                                     JOIN data_buku ON peminjaman_anggota.id_buku = data_buku.id_buku 
-                                                    WHERE peminjaman_anggota.nis = ? AND peminjaman_anggota.status = 'pinjam'
+                                                    WHERE peminjaman_anggota.id_siswa = ? AND peminjaman_anggota.status = 'pinjam'
                                                 ");
-                                                $stmt_pinjam->bind_param("s", $nis);
+                                                $stmt_pinjam->bind_param("s", $id_siswa);
                                                 $stmt_pinjam->execute();
 
                                                 $result_pinjam = $stmt_pinjam->get_result();
@@ -204,47 +205,67 @@
                                                 }
 
                                                 while ($data_pinjam = $result_pinjam->fetch_assoc()) {
-                                                    ?>
-        
-                                                        <div class="row">
-                                                            <div class="col-sm-4 mt-4 border-right border-top border-bottom border-left">
-                                                                <div class="description-block">
-                                                                    <h5 class="description-header mb-3">judul buku</h5>
-                                                                    <span class="description-text">
-                                                                        <?php echo htmlspecialchars($data_pinjam['kode_buku']) ?>
-                                                                        <br>
-                                                                        <?php echo htmlspecialchars($data_pinjam['judul']) ?>
-                                                                    </span>
-                                                                </div>
-                                                            </div>
-        
-                                                            <div class="col-sm-4 mt-4 border-right border-top border-bottom">
-                                                                <div class="description-block">
-                                                                    <h5 class="description-header mb-3">Tanggal_pinjam</h5>
-                                                                    <span class="description-text">
-                                                                        <?php echo htmlspecialchars($data_pinjam['tanggal_pinjam']) ?>
-                                                                    </span>
-                                                                </div>
-                                                            </div>
-        
-                                                            <div class="col-sm-4 mt-4 border-right border-top border-bottom">
-                                                                <div class="description-block">
-                                                                    <h5 class="description-header mb-3">jumlah</h5>
-                                                                    <span class="description-text">
-                                                                        <?php echo htmlspecialchars($data_pinjam['jumlah']) ?>
-                                                                    </span>
-                                                                </div>
-                                                            </div>
-                                                            <form action="" method="post" class="mt-2">
-                                                                <input type="hidden" name="id_peminjaman" value="<?php echo $data_pinjam['id_peminjaman']?>">
-                                                                <button type="submit" class="btn btn-outline-info" name="kembalikan">kembalikan buku</button>
-                                                            </form>
+                                                ?>
+
+                                                <div class="row">
+                                                    <div class="col-sm-4 mt-4 border-right border-top border-bottom border-left">
+                                                        <div class="description-block">
+                                                            <h5 class="description-header mb-3">Judul Buku</h5>
+                                                            <span class="description-text">
+                                                                <?php echo htmlspecialchars($data_pinjam['kode_buku']) ?>
+                                                                <br>
+                                                                <?php echo htmlspecialchars($data_pinjam['judul']) ?>
+                                                            </span>
                                                         </div>
-        
-                                                    <?php } ?>
-                                            <button class="btn btn-info float-right" data-toggle="modal" data-target="#modal-pinjam">
-                                                Pinjam Buku
-                                            </button>
+                                                    </div>
+                                
+                                                    <div class="col-sm-3 mt-4 border-right border-top border-bottom">
+                                                        <div class="description-block">
+                                                            <h5 class="description-header mb-3">Tanggal Pinjam</h5>
+                                                            <span class="description-text">
+                                                                <?php echo htmlspecialchars($data_pinjam['tanggal_pinjam']) ?>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                
+                                                    <div class="col-sm-3 mt-4 border-right border-top border-bottom">
+                                                        <div class="description-block">
+                                                            <h5 class="description-header mb-3">Kembalikan sebelum</h5>
+                                                            <span class="description-text">
+                                                                <?php echo htmlspecialchars($data_pinjam['tanggal_kembali']) ?>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                
+                                                    <div class="col-sm-2 mt-4 border-right border-top border-bottom">
+                                                        <div class="description-block">
+                                                            <h5 class="description-header mb-3">Jumlah</h5>
+                                                            <span class="description-text">
+                                                                <?php echo htmlspecialchars($data_pinjam['jumlah']) ?>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <form action="" method="post" class="mt-2">
+                                                        <input type="hidden" name="id_peminjaman" value="<?php echo $data_pinjam['id_peminjaman']?>">
+                                                        <button type="submit" class="btn btn-outline-info" name="kembalikan">Kembalikan Buku</button>
+                                                    </form>
+                                                </div>
+                                
+                                            <?php } ?>
+
+                                            <?php
+                                                $stmt_check_pinjam = $mysqli->prepare("SELECT COUNT(*) as total FROM peminjaman_anggota WHERE id_siswa = ? AND status = 'pinjam'");
+                                                $stmt_check_pinjam->bind_param("s", $id_siswa);
+                                                $stmt_check_pinjam->execute();
+                                                $result_check_pinjam = $stmt_check_pinjam->get_result();
+                                                $cek = $result_check_pinjam->fetch_assoc();
+                                            ?>
+
+                                            <?php if ($cek['total'] == 0): ?>
+                                                <button class="btn btn-info float-right" data-toggle="modal" data-target="#modal-pinjam">
+                                                    Pinjam Buku
+                                                </button>
+                                            <?php endif; ?>
                                         </div>
                                     </div>
                                 </div>
@@ -253,7 +274,7 @@
                             <div class="modal fade" id="modal-pinjam">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
-            
+
                                         <div class="modal-header">
                                             <h3 class="modal-title">Pinjam Buku</h3>
                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -266,7 +287,8 @@
 
                                                 <div class="form-group">
                                                     <label for="nis">NIS <span class="text-danger">*</span></label>
-                                                    <input type="text" name="nis" id="nis" class="form-control" value="<?php echo htmlspecialchars($item_anggota['nis'])?>" required readonly>
+                                                    <input type="hidden" name="id_siswa" id="id_siswa" class="form-control" value="<?php echo htmlspecialchars($item_anggota['id_siswa'])?>" required readonly>
+                                                    <input type="text" class="form-control" value="<?php echo htmlspecialchars($item_anggota['nis'])?>" required readonly>
                                                 </div>
 
                                                 <div class="form-group">
@@ -276,19 +298,17 @@
                                                         <?php
                                                             $b = $mysqli->query("SELECT * FROM data_buku WHERE stok > 0 ORDER BY id_buku");
                                                             while ($db = mysqli_fetch_array($b)) {
-                                                        ?>
+                                                            ?>
                                                             <option value="<?php echo $db['id_buku'] ?>">
                                                                 <?php echo $db['judul'] ?>
                                                             </option>
-                                                        <?php }?>
+                                                        <?php } ?>
                                                     </select>
                                                 </div>
 
-                                                
-
                                                 <div class="form-group">
-                                                    <label for="jumlah">jumlah <span class="text-danger">*</span></label>
-                                                    <input type="number" name="jumlah" id="jumlah" class="form-control" value="1" placeholder="Masukan jumlah buku yang di pinjam" required>
+                                                    <label for="jumlah">Jumlah <span class="text-danger">*</span></label>
+                                                    <input type="number" name="jumlah" id="jumlah" class="form-control" value="1" placeholder="Masukkan jumlah buku yang di pinjam" required>
                                                 </div>
 
                                                 <div class="form-group">
@@ -324,7 +344,7 @@
 
                             <tbody>
                                 <?php 
-                                    $a_pinjam = $mysqli->query("SELECT * FROM peminjaman_anggota JOIN anggota ON peminjaman_anggota.nis = anggota.nis JOIN data_buku ON peminjaman_anggota.id_buku = data_buku.id_buku");
+                                    $a_pinjam = $mysqli->query("SELECT * FROM peminjaman_anggota JOIN anggota ON peminjaman_anggota.id_siswa = anggota.id_siswa JOIN data_buku ON peminjaman_anggota.id_buku = data_buku.id_buku");
 
                                     $no = 0;
                                     while ($data = mysqli_fetch_array($a_pinjam)) {

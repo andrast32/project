@@ -133,7 +133,6 @@
 
                         <div class="carousel-inner">
                             <?php
-                                // Ambil lagi data buku karena loop sebelumnya sudah habis
                                 $buku = $mysqli->query("SELECT * FROM data_buku ORDER BY id_buku");
                                 $i = 0;
                                 while ($dt_buku = mysqli_fetch_array($buku)) {

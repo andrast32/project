@@ -1,12 +1,11 @@
 <?php 
-
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        if (isset($_POST['nis'])
+        if (isset($_POST['id_siswa'])
             && isset($_POST['id_buku'])
             && isset($_POST['jumlah'])
             && isset($_POST['status'])) {
 
-                $nis                = htmlspecialchars($_POST['nis']);
+                $id_siswa                = htmlspecialchars($_POST['id_siswa']);
                 $id_buku            = htmlspecialchars($_POST['id_buku']);
                 $tanggal_pinjam     = date('Y-m-d');
                 $tanggal_kembali    = date('Y-m-d', strtotime($tanggal_pinjam . ' +9 days'));
@@ -34,8 +33,8 @@
                         </script>
                     ";
                 } else {
-                    $stmt = $mysqli->prepare("INSERT INTO peminjaman_anggota(nis, id_buku, tanggal_pinjam, tanggal_kembali, jumlah, status) VALUES (?, ?, ?, ?, ?, ?)");
-                    $stmt->bind_param("ssssss", $nis, $id_buku, $tanggal_pinjam, $tanggal_kembali, $jumlah, $status);
+                    $stmt = $mysqli->prepare("INSERT INTO peminjaman_anggota(id_siswa, id_buku, tanggal_pinjam, tanggal_kembali, jumlah, status) VALUES (?, ?, ?, ?, ?, ?)");
+                    $stmt->bind_param("ssssss", $id_siswa, $id_buku, $tanggal_pinjam, $tanggal_kembali, $jumlah, $status);
 
                     if ($stmt->execute()) {
                         $stmt_update = $mysqli->prepare("UPDATE data_buku SET stok = stok - ? WHERE id_buku = ?");

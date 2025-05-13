@@ -38,7 +38,7 @@
         
         else {
 
-            $query_anggota = "SELECT * FROM anggota WHERE username = '$username'";
+            $query_anggota = "SELECT * FROM anggota WHERE nis = '$username'";
             $result_anggota = $mysqli->query($query_anggota);
 
             if ($result_anggota && $result_anggota->num_rows == 1) {
@@ -48,7 +48,6 @@
 
                     session_regenerate_id(true);
                     $_SESSION['nis']                = $row_anggota['nis'];
-                    $_SESSION['username']           = $row_anggota['username'];
                     $_SESSION['nama_anggota']       = $row_anggota['nama_anggota'];
                     $_SESSION['alamat']             = $row_anggota['alamat'];
                     $_SESSION['no_telp']            = $row_anggota['no_telp'];
@@ -61,7 +60,7 @@
                     $error_message = "Username atau Password yang anda masukan salah.";
                 }
             } else {
-                $query_guru = "SELECT * FROM guru WHERE username = '$username'";
+                $query_guru = "SELECT * FROM guru WHERE nip = '$username'";
                 $result_guru = $mysqli->query($query_guru);
 
                 if ($result_guru && $result_guru->num_rows == 1) {
@@ -71,7 +70,6 @@
 
                         session_regenerate_id(true);
                         $_SESSION['nip']                = $row_guru['nip'];
-                        $_SESSION['username']           = $row_guru['username'];
                         $_SESSION['nama_guru']          = $row_guru['nama_guru'];
                         $_SESSION['alamat']             = $row_guru['alamat'];
                         $_SESSION['no_telp']            = $row_guru['no_telp'];

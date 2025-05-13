@@ -3,12 +3,12 @@
     session_start();
 
     if (!isset($_SESSION['username'])) {
-        header("Location: ../login.php");
+        header("Location: /project/views/login.php");
         exit();
     }
 
     if ($_SESSION['level'] != 'Admin') {
-        header("Location: ../login.php");
+        header("Location: /project/404.php");
     }
 
 ?>
@@ -30,7 +30,7 @@
     
         <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     
-        <link rel="stylesheet" href="/project/templates/UI_admin/plugins/tempusdomius-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+        <link rel="stylesheet" href="/project/templates/UI_admin/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
         <link rel="stylesheet" href="/project/templates/UI_admin/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
         <link rel="stylesheet" href="/project/templates/UI_admin/plugins/jqvmap/jqvmap.min.css">
 
@@ -46,7 +46,7 @@
 
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
         <script src="/project/templates/UI_admin/plugins/sweetalert2/sweetalert2.min.js"></script>
-        <script src="settings/function/routes/show.js"></script>
+        <script src="/project/templates/js/show.js"></script>
 
     </head>
 

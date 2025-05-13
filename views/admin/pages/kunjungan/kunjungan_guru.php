@@ -29,13 +29,13 @@
             }
             $stmt->close();
         } elseif (isset($_POST['berkunjung'])) {
-            $nip = $_POST['nip'];
+            $id_guru = $_POST['id_guru'];
             $hari = $_POST['hari'];
             $tanggal = $_POST['tanggal'];
             $jam = $_POST['jam'];
 
-            $stmt = $mysqli->prepare("INSERT INTO kunjungan_guru (nip, hari, tanggal, jam) VALUES (?, ?, ?, ?)");
-            $stmt->bind_param("ssss", $nip, $hari, $tanggal, $jam);
+            $stmt = $mysqli->prepare("INSERT INTO kunjungan_guru (id_guru, hari, tanggal, jam) VALUES (?, ?, ?, ?)");
+            $stmt->bind_param("ssss", $id_guru, $hari, $tanggal, $jam);
 
             if ($stmt->execute()) {
                 echo "
@@ -166,10 +166,11 @@
 
                                                 <div class="col-sm-12 mt-2">
                                                     <form action="" method="post">
-                                                        <input type="hidden" name="nip" id="nip" value="<?php echo htmlspecialchars($item_guru['nip'])?>" readonly>
+                                                        <input type="hidden" name="id_guru" id="id_guru" value="<?php echo htmlspecialchars($item_guru['id_guru'])?>" readonly>
                                                         <input type="hidden" name="tanggal" id="tanggal" readonly>
                                                         <input type="hidden" name="hari" id="hari" readonly>
-                                                        <input type="hidden" name="jam" id="jam" value="<?php echo date('H:i')?>" readonly>
+                                                        <input type="hidden" class="form-control" name="jam" value="<?php date_default_timezone_set('Asia/Jakarta'); echo date('H:i') ; ?>" readonly>
+
                                                         <button type="submit" name="berkunjung" class="btn btn-info float-right">Berkunjung</button>
                                                     </form>
                                                 </div>
@@ -194,7 +195,7 @@
                             </thead>
                             <tbody>
                                 <?php
-                                    $kunjungan = $mysqli->query("SELECT * FROM kunjungan_guru JOIN guru ON kunjungan_guru.nip = guru.nip");
+                                    $kunjungan = $mysqli->query("SELECT * FROM kunjungan_guru JOIN guru ON kunjungan_guru.id_guru = guru.id_guru");
 
                                     $no = 0;
                                     while ($data = mysqli_fetch_array($kunjungan)) {

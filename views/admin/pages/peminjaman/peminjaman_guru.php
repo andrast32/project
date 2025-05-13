@@ -1,6 +1,6 @@
 <?php    
     $item_guru   = null;
-    $nip            = null;
+    $nip         = null;
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (isset($_POST['cek_guru'])) {
@@ -158,6 +158,16 @@
     
                                                 <div class="col-sm-4 border-right">
                                                     <div class="description-block">
+                                                        <h5 class="description-header">NIP</h5>
+                                                        <span class="description-text">
+                                                            <?php echo htmlspecialchars($item_guru['nip']) ?>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                
+    
+                                                <div class="col-sm-4 border-right">
+                                                    <div class="description-block">
                                                         <h5 class="description-header">No Telp</h5>
                                                         <span class="description-text">
                                                             <?php echo htmlspecialchars($item_guru['no_telp']) ?>
@@ -168,15 +178,15 @@
                                             </div>
 
                                             <?php
-                                                $nip = $item_guru['nip'];
+                                                $id_guru = $item_guru['id_guru'];
 
                                                 $stmt_pinjam = $mysqli->prepare("
                                                     SELECT data_buku.judul, data_buku.kode_buku, peminjaman_guru.id_peminjaman, peminjaman_guru.tanggal_pinjam, peminjaman_guru.jumlah 
                                                     FROM peminjaman_guru 
                                                     JOIN data_buku ON peminjaman_guru.id_buku = data_buku.id_buku 
-                                                    WHERE peminjaman_guru.nip = ? AND peminjaman_guru.status = 'pinjam'
+                                                    WHERE peminjaman_guru.id_guru = ? AND peminjaman_guru.status = 'pinjam'
                                                 ");
-                                                $stmt_pinjam->bind_param("s", $nip);
+                                                $stmt_pinjam->bind_param("s", $id_guru);
                                                 $stmt_pinjam->execute();
 
                                                 $result_pinjam = $stmt_pinjam->get_result();
@@ -231,10 +241,21 @@
                                                             </form>
                                                         </div>
         
-                                                    <?php } ?>
-                                            <button class="btn btn-info float-right" data-toggle="modal" data-target="#modal-pinjam">
-                                                Pinjam Buku
-                                            </button>
+                                            <?php } ?>
+
+                                            <?php
+                                                $stmt_check_pinjam = $mysqli->prepare("SELECT COUNT(*) as total FROM peminjaman_guru WHERE id_guru = ? AND status = 'pinjam'");
+                                                $stmt_check_pinjam->bind_param("s", $id_guru);
+                                                $stmt_check_pinjam->execute();
+                                                $result_check_pinjam = $stmt_check_pinjam->get_result();
+                                                $cek = $result_check_pinjam->fetch_assoc();
+                                            ?>
+
+                                            <?php if ($cek['total'] == 0): ?>
+                                                <button class="btn btn-info float-right" data-toggle="modal" data-target="#modal-pinjam">
+                                                    Pinjam Buku
+                                                </button>
+                                            <?php endif; ?>
                                         </div>
                                     </div>
                                 </div>
@@ -256,7 +277,8 @@
 
                                                 <div class="form-group">
                                                     <label for="nip">nip <span class="text-danger">*</span></label>
-                                                    <input type="text" name="nip" id="nip" class="form-control" value="<?php echo htmlspecialchars($item_guru['nip'])?>" required readonly>
+                                                    <input type="hidden" name="id_guru" id="id_guru" class="form-control" value="<?php echo htmlspecialchars($item_guru['id_guru'])?>" required readonly>
+                                                    <input type="text" class="form-control" value="<?php echo htmlspecialchars($item_guru['nip'])?>" required readonly>
                                                 </div>
 
                                                 <div class="form-group">
@@ -302,7 +324,7 @@
                             <thead class="bg-navy">
                                 <tr align="center">
                                     <th>No</th>
-                                    <th style="width: 25%;">Nama guru</th>
+                                    <th style="width: 20%;">Nama guru</th>
                                     <th>Judul buku</th>
                                     <th>tanggal pinjam</th>
                                     <th>rencana tanggal kembali</th>
@@ -314,7 +336,7 @@
 
                             <tbody>
                                 <?php 
-                                    $a_pinjam = $mysqli->query("SELECT * FROM peminjaman_guru JOIN guru ON peminjaman_guru.nip = guru.nip JOIN data_buku ON peminjaman_guru.id_buku = data_buku.id_buku");
+                                    $a_pinjam = $mysqli->query("SELECT * FROM peminjaman_guru JOIN guru ON peminjaman_guru.id_guru = guru.id_guru JOIN data_buku ON peminjaman_guru.id_buku = data_buku.id_buku");
 
                                     $no = 0;
                                     while ($data = mysqli_fetch_array($a_pinjam)) {
@@ -443,9 +465,6 @@
 
                         <div class="widget-user-header" style="background: url('../../templates/ui_user/img/bg.jpg');">
                             <h4 class="text-left text-white" style="text-transform: capitalize; font-weight: bold;"><?php echo $da['nama_guru'] ?></h4>
-                            <h5 class="text-right text-white" style="text-transform: capitalize; font-weight: 500;">
-                                <?php echo $da['nip'] ?>
-                            </h5>
                         </div>
 
                         <div class="widget-user-image">
@@ -461,6 +480,15 @@
                                             Alamat
                                         </h5>
                                         <span class="description-text"><?php echo $da['alamat'] ?></span>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-4 border-right">
+                                    <div class="description-block">
+                                        <h5 class="description-header">
+                                            NIP
+                                        </h5>
+                                        <span class="description-text"> <?php echo $da['nip'] ?> </span>
                                     </div>
                                 </div>
 
