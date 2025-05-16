@@ -23,7 +23,7 @@ Struktur database dapat ditemukan pada file [`database/cp.sql`](database/cp.sql)
 
 1. **Clone atau Download Proyek**
    ```bash
-   git clone https://github.com/username/nama-repo.git
+   git clone https://github.com/andrast32/project.git
    ```
 
 2. **Import Database**
