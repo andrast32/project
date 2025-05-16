@@ -1,14 +1,11 @@
 <?php
     include "controller/connect.php";
 
-    // Mendapatkan id_buku dari URL
     if (isset($_GET['id_buku'])) {
         $id_buku = $_GET['id_buku'];
 
-        // Query untuk mengambil data buku berdasarkan id_buku
         $buku = $mysqli->query("SELECT * FROM data_buku WHERE id_buku='$id_buku'");
 
-        // Cek apakah data ditemukan
         if ($data = mysqli_fetch_array($buku)) {
     ?>
 
@@ -23,24 +20,24 @@
                     <meta content="Kebon Dalem | Perpus Digital" name="keywords">
 
                     <!-- icon -->
-                    <link href="../templates/UI_user/img/icon.png" rel="icon">
+                    <link href="/project/templates/UI_user/img/icon.png" rel="icon">
 
                     <!-- fonts -->
                     <link href="https://fonts.googleapis.com" rel="preconnect">
                     <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
                     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
 
-                    <link rel="stylesheet" href="../templates/UI_admin/plugins/fontawesome-free/css/all.min.css">
+                    <link rel="stylesheet" href="/project/templates/UI_admin/plugins/fontawesome-free/css/all.min.css">
 
                     <!-- vendor css file -->
-                    <link href="../templates/UI_user/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-                    <link href="../templates/UI_user/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-                    <link href="../templates/UI_user/vendor/aos/aos.css" rel="stylesheet">
-                    <link href="../templates/UI_user/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-                    <link href="../templates/UI_user/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+                    <link href="/project/templates/UI_user/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+                    <link href="/project/templates/UI_user/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+                    <link href="/project/templates/UI_user/vendor/aos/aos.css" rel="stylesheet">
+                    <link href="/project/templates/UI_user/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+                    <link href="/project/templates/UI_user/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
 
                     <!-- main css file -->
-                    <link href="../templates/UI_user/css/main.css" rel="stylesheet">
+                    <link href="/project/templates/UI_user/css/main.css" rel="stylesheet">
 
                 </head>
 
@@ -50,13 +47,13 @@
                         <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
 
                             <a href="https://kebondalem.sch.id/" class="logo d-flex align-items-center" target="_blank">
-                                <img src="../templates/UI_user/img/logo.png" alt="icon">
+                                <img src="/project/templates/UI_user/img/logo.png" alt="icon">
                                 <h1 class="sitename"><b class="text" style="color: #8b0420;">Kebon Dalem </b> | Perpustakaan Digital.</h1>
                             </a>
 
                             <nav id="navmenu" class="navmenu">
                                 <ul>
-                                    <li><a href="../index.php"><i class="fas fa-home" style="margin-right: 5px;"></i> Home</a></li>
+                                    <li><a href="/project/index.php"><i class="fas fa-home" style="margin-right: 5px;"></i> Home</a></li>
                                     <li><a href="#" class="active"><i class="fas fa-book-open" style="margin-right: 5px;"></i> Daftar Buku</a></li>
                                     <li><a href="login.php"><i class="fas fa-sign-in-alt" style="margin-right: 5px;"></i> Login</a></li>
                                 </ul>
@@ -82,7 +79,7 @@
                                             <article class="article">
 
                                                 <div class="post-img">
-                                                    <img src="../templates/uploads/buku/<?php echo $data['foto']?>" alt="Foto Buku" class="img-fluid"/>
+                                                    <img src="/project/templates/uploads/buku/<?php echo $data['foto']?>" alt="Foto Buku" class="img-fluid"/>
                                                 </div>
 
                                                 <h2 class="title">
@@ -150,17 +147,17 @@
                     <div id="preloader"></div>
 
                     <!-- Vendor JS Files -->
-                    <script src="../templates/UI_user/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-                    <script src="../templates/UI_user/vendor/php-email-form/validate.js"></script>
-                    <script src="../templates/UI_user/vendor/aos/aos.js"></script>
-                    <script src="../templates/UI_user/vendor/swiper/swiper-bundle.min.js"></script>
-                    <script src="../templates/UI_user/vendor/purecounter/purecounter_vanilla.js"></script>
-                    <script src="../templates/UI_user/vendor/glightbox/js/glightbox.min.js"></script>
-                    <script src="../templates/UI_user/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-                    <script src="../templates/UI_user/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+                    <script src="/project/templates/UI_user/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+                    <script src="/project/templates/UI_user/vendor/php-email-form/validate.js"></script>
+                    <script src="/project/templates/UI_user/vendor/aos/aos.js"></script>
+                    <script src="/project/templates/UI_user/vendor/swiper/swiper-bundle.min.js"></script>
+                    <script src="/project/templates/UI_user/vendor/purecounter/purecounter_vanilla.js"></script>
+                    <script src="/project/templates/UI_user/vendor/glightbox/js/glightbox.min.js"></script>
+                    <script src="/project/templates/UI_user/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+                    <script src="/project/templates/UI_user/vendor/isotope-layout/isotope.pkgd.min.js"></script>
 
                     <!-- Main JS File -->
-                    <script src="../templates/UI_user/js/main.js"></script>
+                    <script src="/project/templates/UI_user/js/main.js"></script>
 
                 </body>
 

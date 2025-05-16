@@ -47,6 +47,7 @@
                 if (password_verify($password, $row_anggota['password'])) {
 
                     session_regenerate_id(true);
+                    $_SESSION['id_siswa']           = $row_anggota['id_siswa'];
                     $_SESSION['nis']                = $row_anggota['nis'];
                     $_SESSION['nama_anggota']       = $row_anggota['nama_anggota'];
                     $_SESSION['alamat']             = $row_anggota['alamat'];
@@ -69,6 +70,7 @@
                     if (password_verify($password, $row_guru['password'])) {
 
                         session_regenerate_id(true);
+                        $_SESSION['id_guru']            = $row_guru['id_guru'];
                         $_SESSION['nip']                = $row_guru['nip'];
                         $_SESSION['nama_guru']          = $row_guru['nama_guru'];
                         $_SESSION['alamat']             = $row_guru['alamat'];

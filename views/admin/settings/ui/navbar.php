@@ -29,17 +29,9 @@
                     Change Password
                 </button>
 
-                <button class="dropdown-item" data-toggle="modal" data-target="#import-db">
-                    <i class="fas fa-database mr-2"></i> Import Database
-                </button>
-
-                <button class="dropdown-item" data-toggle="modal" data-target="#export-db">
-                    <i class="fas fa-database mr-2"></i> Export Database
-                </button>
-
                 <div class="dropdown-divider"></div>
 
-                <a href="settings/logout.php" class="dropdown-item">
+                <a href="../controller/logout.php" class="dropdown-item">
                     <i class="fas fa-power-off mr-2"></i> Logout
                 </a>
 

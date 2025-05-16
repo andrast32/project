@@ -139,10 +139,10 @@
                             <div class="col-md-6" style="margin: 0 15rem;">
                                 <div class="card-body">
                                     <div class="card card-widget widget-user">
-                                        <div class="widget-user-header" style="background: url('../../templates/ui_user/img/foto2.jpg');"></div>
+                                        <div class="widget-user-header" style="background: url('/project/templates/ui_user/img/foto2.jpg');"></div>
 
                                         <div class="widget-user-image">
-                                            <img src="../../templates/uploads/anggota/<?php echo htmlspecialchars($item_anggota['foto'])?>" alt="Avatar" class="img-circle">
+                                            <img src="/project/templates/uploads/anggota/<?php echo htmlspecialchars($item_anggota['foto'])?>" alt="Avatar" class="img-circle">
                                         </div>
 
                                         <div class="card-footer">
@@ -354,7 +354,7 @@
                                     <tr>
                                         <td align="center"><?php echo $no?></td>
                                         <td>
-                                            <button class="btn" data-toggle="modal" data-target="#anggota-<?php echo $data['nis']?>">
+                                            <button class="btn" data-toggle="modal" data-target="#anggota-<?php echo $data['nis']?>" style="text-align: left;">
                                                 <?php echo $data['nama_anggota']?>
 
                                             </button>
@@ -406,13 +406,13 @@
                 <div class="modal-body">
                     <div class="card card-widget widget-user">
 
-                        <div class="widget-user-header" style="background: url('../../templates/ui_user/img/bg.jpg');">
+                        <div class="widget-user-header" style="background: url('/project/templates/ui_user/img/bg.jpg');">
                             <h4 class="text-left text-white" style="text-transform: capitalize; font-weight: bold;"><?php echo $db['judul'] ?></h4>
                             <h4 class="text-left text-white" style="text-transform: capitalize; font-weight: bold;"><?php echo $db['kode_buku'] ?></h4>
                         </div>
 
                         <div class="widget-user-image">
-                            <img src="../../templates/uploads/buku/<?php echo $db['foto']?>" alt="Avatar" class="img-circle">
+                            <img src="/project/templates/uploads/buku/<?php echo $db['foto']?>" alt="Avatar">
                         </div>
 
                         <div class="card-footer">
@@ -540,7 +540,7 @@
                 <div class="modal-body">
                     <div class="card card-widget widget-user">
 
-                        <div class="widget-user-header" style="background: url('../../templates/ui_user/img/bg.jpg');">
+                        <div class="widget-user-header" style="background: url('/project/templates/ui_user/img/bg.jpg');">
                             <h4 class="text-left text-white" style="text-transform: capitalize; font-weight: bold;"><?php echo $da['nama_anggota'] ?></h4>
                             <h5 class="text-right text-white" style="text-transform: capitalize; font-weight: 500;">
                                 <?php echo $da['nis'] ?>
@@ -548,7 +548,7 @@
                         </div>
 
                         <div class="widget-user-image">
-                            <img src="../../templates/uploads/anggota/<?php echo $da['foto']?>" alt="Avatar" class="img-circle">
+                            <img src="/project/templates/uploads/anggota/<?php echo $da['foto']?>" alt="Avatar" class="img-circle">
                         </div>
 
                         <div class="card-footer">

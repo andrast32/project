@@ -11,6 +11,8 @@
         header("Location: /project/404.php");
     }
 
+    $id_user_session = $_SESSION['username'];
+
 ?>
 
 <!DOCTYPE html>

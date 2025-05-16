@@ -148,114 +148,112 @@
     </div>
 </div>
 
-<!-- kelas start -->
-        <?php
-            $k = $mysqli->query("SELECT * FROM data_kelas JOIN guru ON data_kelas.id_guru = guru.id_guru");
-            while ($eke = mysqli_fetch_array($k)) {
-        ?>
-            <div class="modal fade" id="modal-edit-kelas-<?php echo $eke['id_kelas']?>">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-            
-                        <div class="modal-header">
-                            <h3 class="modal-title">Edit kelas</h3>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-
-                        <div class="modal-body">
-                            <form action="?settings=edit/edit_kelas" method="post" enctype="multipart/form-data">
-
-                                <input type="hidden" name="id_kelas" id="id_kelas" value="<?php echo $eke['id_kelas']?>">
-                                <div class="form-group">
-                                    <label for="kelas">Kelas <span class="text-danger"></span></label>
-                                    <select name="kelas" id="kelas" class="form-control" required>
-                                        <option value="">Pilih kelas</option>
-                                        <option value="1" <?php if ($eke['kelas'] == '1') echo 'selected'; ?> >
-                                            1
-                                        </option>
-                                        <option value="2" <?php if ($eke['kelas'] == '2') echo 'selected'; ?>>
-                                            2
-                                        </option>
-                                        <option value="3" <?php if ($eke['kelas'] == '3') echo 'selected'; ?>>
-                                            3
-                                        </option>
-                                        <option value="4" <?php if ($eke['kelas'] == '4') echo 'selected'; ?>>
-                                            4
-                                        </option>
-                                        <option value="5" <?php if ($eke['kelas'] == '5') echo 'selected'; ?>>
-                                            5
-                                        </option>
-                                        <option value="6" <?php if ($eke['kelas'] == '6') echo 'selected'; ?>>
-                                            6
-                                        </option>
-                                    </select>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="indeks kelas">Indeks kelas <span class="text-danger">*</span></label>
-                                    <select name="indeks_kelas" id="indeks_kelas" class="form-control" required>
-                                        <option value="">Pilih Kelas</option>
-                                        <option value="A" <?php if ($eke ['indeks_kelas'] == 'A') echo 'selected'; ?>>A</option>
-                                        <option value="B" <?php if ($eke ['indeks_kelas'] == 'B') echo 'selected'; ?>>B</option>
-                                        <option value="C" <?php if ($eke ['indeks_kelas'] == 'C') echo 'selected'; ?>>C</option>
-                                        <option value="D" <?php if ($eke ['indeks_kelas'] == 'D') echo 'selected'; ?>>D</option>
-                                        <option value="E" <?php if ($eke ['indeks_kelas'] == 'E') echo 'selected'; ?>>E</option>
-                                        <option value="F" <?php if ($eke ['indeks_kelas'] == 'F') echo 'selected'; ?>>F</option>
-                                        <option value="G" <?php if ($eke ['indeks_kelas'] == 'G') echo 'selected'; ?>>G</option>
-                                        <option value="H" <?php if ($eke ['indeks_kelas'] == 'H') echo 'selected'; ?>>H</option>
-                                        <option value="I" <?php if ($eke ['indeks_kelas'] == 'I') echo 'selected'; ?>>I</option>
-                                        <option value="J" <?php if ($eke ['indeks_kelas'] == 'J') echo 'selected'; ?>>J</option>
-                                        <option value="K" <?php if ($eke ['indeks_kelas'] == 'K') echo 'selected'; ?>>K</option>
-                                        <option value="L" <?php if ($eke ['indeks_kelas'] == 'L') echo 'selected'; ?>>L</option>
-                                        <option value="M" <?php if ($eke ['indeks_kelas'] == 'M') echo 'selected'; ?>>M</option>
-                                        <option value="N" <?php if ($eke ['indeks_kelas'] == 'N') echo 'selected'; ?>>N</option>
-                                        <option value="O" <?php if ($eke ['indeks_kelas'] == 'O') echo 'selected'; ?>>O</option>
-                                        <option value="P" <?php if ($eke ['indeks_kelas'] == 'P') echo 'selected'; ?>>P</option>
-                                        <option value="Q" <?php if ($eke ['indeks_kelas'] == 'Q') echo 'selected'; ?>>Q</option>
-                                        <option value="R" <?php if ($eke ['indeks_kelas'] == 'R') echo 'selected'; ?>>R</option>
-                                        <option value="S" <?php if ($eke ['indeks_kelas'] == 'S') echo 'selected'; ?>>S</option>
-                                        <option value="T" <?php if ($eke ['indeks_kelas'] == 'T') echo 'selected'; ?>>T</option>
-                                        <option value="U" <?php if ($eke ['indeks_kelas'] == 'U') echo 'selected'; ?>>U</option>
-                                        <option value="V" <?php if ($eke ['indeks_kelas'] == 'V') echo 'selected'; ?>>V</option>
-                                        <option value="W" <?php if ($eke ['indeks_kelas'] == 'W') echo 'selected'; ?>>W</option>
-                                        <option value="X" <?php if ($eke ['indeks_kelas'] == 'X') echo 'selected'; ?>>X</option>
-                                        <option value="Y" <?php if ($eke ['indeks_kelas'] == 'Y') echo 'selected'; ?>>Y</option>
-                                        <option value="Z" <?php if ($eke ['indeks_kelas'] == 'Z') echo 'selected'; ?>>Z</option>
-                                    </select>
-                                </div>
-
-                                <div class="form-froup">
-                                    <label for="wali kelas">Wali kelas <span class="text-danger">*</span></label>
-                                    <select name="id_guru" id="id_guru" class="form-control" required>
-                                        <option value="">Pilih Walikelas</option>
-                                        <option value="<?php echo $eke['id_guru']?>" selected><?php echo $eke['nama_guru']?></option>
-                                        <?php
-                                            $k_guru = $mysqli->query("SELECT * FROM guru WHERE id_guru NOT IN (SELECT id_guru FROM data_kelas WHERE id_guru IS NOT NULL) ORDER BY id_guru");
-                                            while ($kg = mysqli_fetch_array($k_guru)) {
-                                        ?>
-                                            <option value="<?php echo $kg['id_guru']?>">
-                                                <?php echo $kg['nama_guru'] ?>
-                                            </option>
-                                        <?php } ?>
-                                    </select>
-                                </div>
-
-                                <div class="modal-footer">
-                                    <input type="reset" value="Reset" class="btn btn-warning">
-                                    <input type="submit" value="Submit" class="btn btn-info">
-                                </div>
-
-                            </form>
-                        </div>
-
-                    </div>
+<?php
+    $k = $mysqli->query("SELECT * FROM data_kelas JOIN guru ON data_kelas.id_guru = guru.id_guru");
+    while ($eke = mysqli_fetch_array($k)) {
+    ?>
+    <div class="modal fade" id="modal-edit-kelas-<?php echo $eke['id_kelas']?>">
+        <div class="modal-dialog">
+            <div class="modal-content">
+    
+                <div class="modal-header">
+                    <h3 class="modal-title">Edit kelas</h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
-            </div>
 
-        <?php }  ?>
-    <!-- kelas end -->
+                <div class="modal-body">
+                    <form action="?settings=edit/edit_kelas" method="post" enctype="multipart/form-data">
+
+                        <input type="hidden" name="id_kelas" id="id_kelas" value="<?php echo $eke['id_kelas']?>">
+                        <div class="form-group">
+                            <label for="kelas">Kelas <span class="text-danger"></span></label>
+                            <select name="kelas" id="kelas" class="form-control" required>
+                                <option value="">Pilih kelas</option>
+                                <option value="1" <?php if ($eke['kelas'] == '1') echo 'selected'; ?> >
+                                    1
+                                </option>
+                                <option value="2" <?php if ($eke['kelas'] == '2') echo 'selected'; ?>>
+                                    2
+                                </option>
+                                <option value="3" <?php if ($eke['kelas'] == '3') echo 'selected'; ?>>
+                                    3
+                                </option>
+                                <option value="4" <?php if ($eke['kelas'] == '4') echo 'selected'; ?>>
+                                    4
+                                </option>
+                                <option value="5" <?php if ($eke['kelas'] == '5') echo 'selected'; ?>>
+                                    5
+                                </option>
+                                <option value="6" <?php if ($eke['kelas'] == '6') echo 'selected'; ?>>
+                                    6
+                                </option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="indeks kelas">Indeks kelas <span class="text-danger">*</span></label>
+                            <select name="indeks_kelas" id="indeks_kelas" class="form-control" required>
+                                <option value="">Pilih Kelas</option>
+                                <option value="A" <?php if ($eke ['indeks_kelas'] == 'A') echo 'selected'; ?>>A</option>
+                                <option value="B" <?php if ($eke ['indeks_kelas'] == 'B') echo 'selected'; ?>>B</option>
+                                <option value="C" <?php if ($eke ['indeks_kelas'] == 'C') echo 'selected'; ?>>C</option>
+                                <option value="D" <?php if ($eke ['indeks_kelas'] == 'D') echo 'selected'; ?>>D</option>
+                                <option value="E" <?php if ($eke ['indeks_kelas'] == 'E') echo 'selected'; ?>>E</option>
+                                <option value="F" <?php if ($eke ['indeks_kelas'] == 'F') echo 'selected'; ?>>F</option>
+                                <option value="G" <?php if ($eke ['indeks_kelas'] == 'G') echo 'selected'; ?>>G</option>
+                                <option value="H" <?php if ($eke ['indeks_kelas'] == 'H') echo 'selected'; ?>>H</option>
+                                <option value="I" <?php if ($eke ['indeks_kelas'] == 'I') echo 'selected'; ?>>I</option>
+                                <option value="J" <?php if ($eke ['indeks_kelas'] == 'J') echo 'selected'; ?>>J</option>
+                                <option value="K" <?php if ($eke ['indeks_kelas'] == 'K') echo 'selected'; ?>>K</option>
+                                <option value="L" <?php if ($eke ['indeks_kelas'] == 'L') echo 'selected'; ?>>L</option>
+                                <option value="M" <?php if ($eke ['indeks_kelas'] == 'M') echo 'selected'; ?>>M</option>
+                                <option value="N" <?php if ($eke ['indeks_kelas'] == 'N') echo 'selected'; ?>>N</option>
+                                <option value="O" <?php if ($eke ['indeks_kelas'] == 'O') echo 'selected'; ?>>O</option>
+                                <option value="P" <?php if ($eke ['indeks_kelas'] == 'P') echo 'selected'; ?>>P</option>
+                                <option value="Q" <?php if ($eke ['indeks_kelas'] == 'Q') echo 'selected'; ?>>Q</option>
+                                <option value="R" <?php if ($eke ['indeks_kelas'] == 'R') echo 'selected'; ?>>R</option>
+                                <option value="S" <?php if ($eke ['indeks_kelas'] == 'S') echo 'selected'; ?>>S</option>
+                                <option value="T" <?php if ($eke ['indeks_kelas'] == 'T') echo 'selected'; ?>>T</option>
+                                <option value="U" <?php if ($eke ['indeks_kelas'] == 'U') echo 'selected'; ?>>U</option>
+                                <option value="V" <?php if ($eke ['indeks_kelas'] == 'V') echo 'selected'; ?>>V</option>
+                                <option value="W" <?php if ($eke ['indeks_kelas'] == 'W') echo 'selected'; ?>>W</option>
+                                <option value="X" <?php if ($eke ['indeks_kelas'] == 'X') echo 'selected'; ?>>X</option>
+                                <option value="Y" <?php if ($eke ['indeks_kelas'] == 'Y') echo 'selected'; ?>>Y</option>
+                                <option value="Z" <?php if ($eke ['indeks_kelas'] == 'Z') echo 'selected'; ?>>Z</option>
+                            </select>
+                        </div>
+
+                        <div class="form-froup">
+                            <label for="wali kelas">Wali kelas <span class="text-danger">*</span></label>
+                            <select name="id_guru" id="id_guru" class="form-control" required>
+                                <option value="">Pilih Walikelas</option>
+                                <option value="<?php echo $eke['id_guru']?>" selected><?php echo $eke['nama_guru']?></option>
+                                <?php
+                                    $k_guru = $mysqli->query("SELECT * FROM guru WHERE id_guru NOT IN (SELECT id_guru FROM data_kelas WHERE id_guru IS NOT NULL) ORDER BY id_guru");
+                                    while ($kg = mysqli_fetch_array($k_guru)) {
+                                ?>
+                                    <option value="<?php echo $kg['id_guru']?>">
+                                        <?php echo $kg['nama_guru'] ?>
+                                    </option>
+                                <?php } ?>
+                            </select>
+                        </div>
+
+                        <div class="modal-footer">
+                            <input type="reset" value="Reset" class="btn btn-warning">
+                            <input type="submit" value="Submit" class="btn btn-info">
+                        </div>
+
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+<?php }  ?>
 
 <?php 
 
@@ -279,7 +277,6 @@
 
                             <div class="widget-user-header" style="background: url('../../templates/ui_user/img/bg.jpg');">
                                 <h4 class="text-left text-white" style="text-transform: capitalize; font-weight: bold;"><?php echo $dg['nama_guru'] ?></h4>
-                                <h5 class="text-left text-white" style="text-transform: capitalize; font-weight: 500;"><?php echo $dg['nip'] ?></h5>
                             </div>
 
                             <div class="widget-user-image">
@@ -289,7 +286,7 @@
                             <div class="card-footer">
                                 <div class="row">
 
-                                    <div class="col-sm-6 border-right">
+                                    <div class="col-sm-4 border-right">
                                         <div class="description-block">
                                             <h5 class="description-header">
                                                 Alamat
@@ -298,7 +295,16 @@
                                         </div>
                                     </div>
 
-                                    <div class="col-sm-6 border-right">
+                                    <div class="col-sm-4 border-right">
+                                        <div class="description-block">
+                                            <h5 class="description-header">
+                                                NIP
+                                            </h5>
+                                            <span class="description-text"> <?php echo $dg['nip'] ?> </span>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-4 border-right">
                                         <div class="description-block">
                                             <h5 class="description-header">
                                                 No Telp

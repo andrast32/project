@@ -110,12 +110,11 @@
                         <div style="font-size: 13px; line-height: 1.5;">
                             <p><strong>NIP:</strong> <?php echo $data['nip'] ?></p>
                             <p><strong>Nama:</strong> <?php echo $data['nama_guru'] ?></p>
-                            <p><strong>Alamat:</strong> <?php echo $data['alamat'] ?></p>
                             <p><strong>No. Telp:</strong> <?php echo $data['no_telp'] ?></p>
                         </div>
 
                         <div>
-                            <img src="../../templates/uploads/guru/<?php echo $data['foto'] ?>" style="width: 100px; height: 110px; object-fit: cover; border: 1.5px solid #333;">
+                            <img src="../../templates/uploads/guru/<?php echo $data['foto'] ?>" style="width: 100px; height: 110px; object-fit: cover; border: 1.5px solid #333; margin-top: 10px;">
                         </div>
                     </div>
 

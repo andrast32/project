@@ -138,10 +138,10 @@
                             <div class="col-md-6" style="margin: 0 15rem;">
                                 <div class="card-body">
                                     <div class="card card-widget widget-user">
-                                        <div class="widget-user-header" style="background: url('../../templates/ui_user/img/foto2.jpg');"></div>
+                                        <div class="widget-user-header" style="background: url('/project/templates/ui_user/img/foto2.jpg');"></div>
     
                                         <div class="widget-user-image">
-                                            <img src="../../templates/uploads/guru/<?php echo htmlspecialchars($item_guru['foto'])?>" alt="Avatar" class="img-circle">
+                                            <img src="/project/templates/uploads/guru/<?php echo htmlspecialchars($item_guru['foto'])?>" alt="Avatar" class="img-circle">
                                         </div>
     
                                         <div class="card-footer">
@@ -398,13 +398,13 @@
                 <div class="modal-body">
                     <div class="card card-widget widget-user">
 
-                        <div class="widget-user-header" style="background: url('../../templates/ui_user/img/bg.jpg');">
+                        <div class="widget-user-header" style="background: url('/project/templates/ui_user/img/bg.jpg');">
                             <h4 class="text-left text-white" style="text-transform: capitalize; font-weight: bold;"><?php echo $db['judul'] ?></h4>
                             <h4 class="text-left text-white" style="text-transform: capitalize; font-weight: bold;"><?php echo $db['kode_buku'] ?></h4>
                         </div>
 
                         <div class="widget-user-image">
-                            <img src="../../templates/uploads/buku/<?php echo $db['foto']?>" alt="Avatar" class="img-circle">
+                            <img src="/project/templates/uploads/buku/<?php echo $db['foto']?>" alt="Avatar">
                         </div>
 
                         <div class="card-footer">
@@ -532,12 +532,12 @@
                 <div class="modal-body">
                     <div class="card card-widget widget-user">
 
-                        <div class="widget-user-header" style="background: url('../../templates/ui_user/img/bg.jpg');">
+                        <div class="widget-user-header" style="background: url('/project/templates/ui_user/img/bg.jpg');">
                             <h4 class="text-left text-white" style="text-transform: capitalize; font-weight: bold;"><?php echo $da['nama_guru'] ?></h4>
                         </div>
 
                         <div class="widget-user-image">
-                            <img src="../../templates/uploads/guru/<?php echo $da['foto']?>" alt="Avatar" class="img-circle">
+                            <img src="/project/templates/uploads/guru/<?php echo $da['foto']?>" alt="Avatar" class="img-circle">
                         </div>
 
                         <div class="card-footer">

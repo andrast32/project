@@ -34,7 +34,7 @@ CREATE TABLE `data_buku` (
   PRIMARY KEY (`id_buku`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
-INSERT INTO data_buku VALUES("3","ADPU 4341","Analisis dan Perancangan Sistem","Buku Pelajaran","Analisis dan Perancangan Sistem\n\n\n\nSebuah Pengantar Buku «Analisis dan Perancangan Sistem» adalah sumber referensi penting bagi mereka yang ingin memahami proses pengembangan sistem informasi yang berkualitas.\n\nBuku ini berfokus pada dua aspek utama dalam pengembangan sistem, yaitu analisis dan perancangan, yang merupakan fondasi penting dalam setiap proyek teknologi informasi.\n\nDi era digital ini, hampir semua organisasi, baik besar maupun kecil, membutuhkan sistem informasi yang andal untuk menjalankan operasi bisnis mereka.\n\nSalah satu teknik yang paling umum digunakan adalah Data Flow Diagram yang menggambarkan aliran data dalam sistem. DFD membantu menganalisis bagaimana data bergerak melalui sistem, dari input hingga output, serta bagaimana proses internal bekerja. Selain itu, buku ini juga menjelaskan penggunaan Entity-Relationship Diagram yang digunakan untuk memodelkan hubungan antar entitas dalam database. Misalnya, cloud computing memungkinkan organisasi untuk mengakses sumber daya komputasi yang lebih besar tanpa harus mengelola infrastruktur mereka sendiri, sedangkan big data memberikan peluang untuk menganalisis data dalam jumlah besar guna mendapatkan wawasan yang lebih mendalam. Pengujian dan Implementasi Sistem Setelah sistem dirancang, tahap berikutnya adalah pengujian dan implementasi. Pengujian sistem sangat penting untuk memastikan bahwa sistem berfungsi sesuai dengan spesifikasi yang telah ditentukan.","Bahar S.T, M.Kom.","Universitas Terbuka","2024-09-11","A 02","22","3.jpg");
+INSERT INTO data_buku VALUES("3","ADPU 4341","Analisis dan Perancangan Sistem","Buku Pelajaran","Analisis dan Perancangan Sistem\n\n\n\nSebuah Pengantar Buku «Analisis dan Perancangan Sistem» adalah sumber referensi penting bagi mereka yang ingin memahami proses pengembangan sistem informasi yang berkualitas.\n\nBuku ini berfokus pada dua aspek utama dalam pengembangan sistem, yaitu analisis dan perancangan, yang merupakan fondasi penting dalam setiap proyek teknologi informasi.\n\nDi era digital ini, hampir semua organisasi, baik besar maupun kecil, membutuhkan sistem informasi yang andal untuk menjalankan operasi bisnis mereka.\n\nSalah satu teknik yang paling umum digunakan adalah Data Flow Diagram yang menggambarkan aliran data dalam sistem. DFD membantu menganalisis bagaimana data bergerak melalui sistem, dari input hingga output, serta bagaimana proses internal bekerja. Selain itu, buku ini juga menjelaskan penggunaan Entity-Relationship Diagram yang digunakan untuk memodelkan hubungan antar entitas dalam database. Misalnya, cloud computing memungkinkan organisasi untuk mengakses sumber daya komputasi yang lebih besar tanpa harus mengelola infrastruktur mereka sendiri, sedangkan big data memberikan peluang untuk menganalisis data dalam jumlah besar guna mendapatkan wawasan yang lebih mendalam. Pengujian dan Implementasi Sistem Setelah sistem dirancang, tahap berikutnya adalah pengujian dan implementasi. Pengujian sistem sangat penting untuk memastikan bahwa sistem berfungsi sesuai dengan spesifikasi yang telah ditentukan.","Bahar S.T, M.Kom.","Universitas Terbuka","2024-09-11","A 02","21","3.png");
 INSERT INTO data_buku VALUES("5","ADPU 4342","Teori Organisasi","Buku Pelajaran","teori organisasi","DRS. Agus Joko Purwanto, M.Si.","Universitas Terbuka","2024-09-23","A 01","20","5.png");
 
 
@@ -68,7 +68,7 @@ CREATE TABLE `guru` (
   PRIMARY KEY (`id_guru`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
-INSERT INTO guru VALUES("7","1921681002","$2y$10$0AZmbZCWg1t9ZyZ2L8WarewQF1HprqKZpn5FLwGgqtXDIjAyoHwJC","asep budiman cahya","rumah asep","081234567890","1921681001.jpg","guru");
+INSERT INTO guru VALUES("7","1921681002","$2y$10$0AZmbZCWg1t9ZyZ2L8WarewQF1HprqKZpn5FLwGgqtXDIjAyoHwJC","asep budiman cahya","rumah sinta aulia cantika putri ramdani lestari anggunita","081234567890","1921681001.jpg","guru");
 INSERT INTO guru VALUES("9","1234567890123456713","$2y$10$DibsXZRvdgYy0NV1X/aNaeYSc0lGH8V/UFDDawcQAPqtbXMyr4tZG","Bambang Wibowo","rumah bambang","081234567890","1234567890123456782.jpg","guru");
 INSERT INTO guru VALUES("12","1234567890123456789","$2y$10$jgNStQ6g.spw2IJ2NelLFO0ijoRN6I1w5TXJXkwCgsYPhz8TI3SIe","syifa sinta shakila","rumah syifa","081234567890","1234567890123456789.jpg","guru");
 INSERT INTO guru VALUES("14","1234567890123456790","$2y$10$LLPHLRf4cpVphR4AxE1yHO.rkAxljtm4nGkNQJEvusyrAUrOtMaQm","eneng","rumah eneng","081234567892","1234567890123456790.jpg","guru");
@@ -117,7 +117,7 @@ CREATE TABLE `peminjaman_anggota` (
   `status` enum('kembali','pinjam') CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `denda` int DEFAULT NULL,
   PRIMARY KEY (`id_peminjaman`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=1000000043 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=1000000044 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 INSERT INTO peminjaman_anggota VALUES("1000000033","8","3","2025-05-10","2025-05-19","2025-05-10","10","kembali","");
 INSERT INTO peminjaman_anggota VALUES("1000000034","8","3","2025-05-10","2025-05-19","2025-05-10","1","kembali","");
@@ -129,6 +129,7 @@ INSERT INTO peminjaman_anggota VALUES("1000000039","8","3","2025-05-11","2025-05
 INSERT INTO peminjaman_anggota VALUES("1000000040","8","3","2025-05-13","2025-05-22","2025-05-13","1","kembali","");
 INSERT INTO peminjaman_anggota VALUES("1000000041","8","3","2025-05-13","2025-05-22","2025-05-13","1","kembali","");
 INSERT INTO peminjaman_anggota VALUES("1000000042","8","5","2025-05-13","2025-05-22","2025-05-13","10","kembali","");
+INSERT INTO peminjaman_anggota VALUES("1000000043","8","3","2025-05-14","2025-05-23","","1","pinjam","");
 
 
 DROP TABLE IF EXISTS peminjaman_guru;

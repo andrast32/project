@@ -87,58 +87,6 @@
 
     </div>
 
-    <!-- export database start -->
-    <div class="modal fade" id="export-db">
-        <div class="modal-dialog">
-            <div class="modal-content">
-
-                <div class="modal-header">
-                    <h5 class="modal-title">Backup Database</h5>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                </div>
-
-                <div class="modal-body">
-                    <a href="/project/database/backup.sql" class="btn btn-success float-right">
-                        <i class="fas fa-download"></i>
-                        Download Database
-                    </a>
-                </div>
-
-            </div>
-        </div>
-    </div>
-    <!-- export database end -->
-
-    <!-- Modal Import Database -->
-    <div class="modal fade" id="import-db" tabindex="-1" role="dialog" aria-labelledby="importDbLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <form action="?settings=sql/import" method="POST" enctype="multipart/form-data">
-                <div class="modal-content">
-
-                    <div class="modal-header bg-info">
-                        <h5 class="modal-title" id="importDbLabel">Import Database</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-        
-                    <div class="modal-body">
-                        <div class="form-group">
-                            <label for="file">Pilih file SQL</label>
-                            <input type="file" name="file" id="file" class="form-control" required accept=".sql">
-                        </div>
-                    </div>
-
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
-                        <button type="submit" class="btn btn-primary">Import</button>
-                    </div>
-
-                </div>
-            </form>
-        </div>
-    </div>
-
     <?php
     include "settings/ui/footer.php";
     include "settings/ui/scripts.php";
