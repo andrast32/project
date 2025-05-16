@@ -56,4 +56,8 @@ Proyek ini menggunakan lisensi [MIT](LICENSE).
 
 ---
 
+<<<<<<< HEAD
 **Dibuat andrast**
+=======
+**Dibuat dengan 10 kopi**
+>>>>>>> cbe85ca2199c7610c03082e21eaba4daed27496f
