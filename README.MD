@@ -1,6 +1,6 @@
 # 📚 Sistem Manajemen Perpustakaan Digital
 
-Ini adalah proyek **Sistem Manajemen Perpustakaan Digital** berbasis web yang dibangun menggunakan PHP dan MySQL. Sistem ini mendukung pengelolaan data buku, anggota, guru, peminjaman, pengembalian, serta fitur backup database.
+Ini adalah proyek **Sistem Manajemen Perpustakaan Digital** berbasis web yang dibangun menggunakan PHP dan MySQL. Sistem ini mendukung pengelolaan data buku, anggota, guru, peminjaman, pengembalian.
 
 ## Fitur Utama
 
@@ -8,7 +8,6 @@ Ini adalah proyek **Sistem Manajemen Perpustakaan Digital** berbasis web yang di
 - **Manajemen Anggota & Guru**: Kelola data anggota (siswa) dan guru.
 - **Peminjaman & Pengembalian**: Catat transaksi peminjaman dan pengembalian buku.
 - **Kunjungan**: Monitoring kunjungan anggota dan guru ke perpustakaan.
-- **Backup Database**: Ekspor database ke file SQL untuk backup.
 - **Manajemen User/Admin**: Kelola akun admin.
 
 ## Struktur Database
