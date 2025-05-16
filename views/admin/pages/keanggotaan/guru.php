@@ -36,7 +36,7 @@
                                     <tr>
                                         <td align="center"><?php echo $no?></td>
                                         <td style="max-width: 50;"><?php echo $data['nip']?></td>
-                                        <td><?php echo $data['nama_guru']?></td>
+                                        <td style="text-transform: capitalize; text-align: left;"><?php echo $data['nama_guru']?></td>
                                         <td><?php echo $data['alamat']?></td>
                                         <td><?php echo $data['no_telp']?></td>
                                         <td align="center">

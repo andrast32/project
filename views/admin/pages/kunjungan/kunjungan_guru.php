@@ -204,7 +204,7 @@
                                     <tr align="center">
                                         <td><?php echo $no ?></td>
                                         <td align="justify">
-                                            <button class="btn" data-toggle="modal" data-target="#guru-<?php echo $data['nip']?>">
+                                            <button class="btn" data-toggle="modal" data-target="#guru-<?php echo $data['nip']?>" style="text-transform: capitalize; text-align: left;">
                                                 <?php echo $data['nama_guru']?>
                                             </button>
                                         </td>

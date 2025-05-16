@@ -36,7 +36,7 @@
                                     <tr>
                                         <td align="center"><?php echo $no ?></td>
                                         <td align="center"><?php echo $data['nis'] ?></td>
-                                        <td><?php echo $data['nama_anggota'] ?></td>
+                                        <td style="text-transform: capitalize; text-align: left;"><?php echo $data['nama_anggota'] ?></td>
                                         <td align="center">
                                             <button class="btn" data-toggle="modal" data-target="#kelas-<?php echo $data['id_kelas']?>">
                                                 <?php echo $data['kelas'] ?>

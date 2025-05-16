@@ -37,7 +37,7 @@
                                             <?php echo $data['indeks_kelas'] ?>
                                         </td>
                                         <td>
-                                            <button class="btn" data-toggle="modal" data-target="#modal-tampil-<?php echo $data['id_guru']?>">
+                                            <button class="btn" data-toggle="modal" data-target="#modal-tampil-<?php echo $data['id_guru']?>" style="text-transform: capitalize; text-align: left;">
                                                 <?php echo $data['nama_guru']?>
                                             </button>
                                         </td>
