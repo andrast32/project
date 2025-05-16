@@ -41,11 +41,6 @@ Struktur database dapat ditemukan pada file [`database/cp.sql`](database/cp.sql)
    - Letakkan folder proyek di dalam direktori web server (misal: `c:\laragon\www\project`).
    - Akses melalui browser: `http://localhost/project`
 
-## Fitur Backup Database
-
-- Untuk melakukan backup database, gunakan menu **Backup** pada aplikasi.
-- File backup akan dihasilkan dalam format `.sql` dan dapat diunduh langsung.
-
 ## Catatan
 
 - Pastikan ekstensi PHP seperti `mysqli` sudah aktif.
