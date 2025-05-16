@@ -1,6 +1,6 @@
 # 📚 Sistem Manajemen Perpustakaan Digital
 
-Ini adalah proyek **Sistem Manajemen Perpustakaan Digital** berbasis web yang dibangun menggunakan PHP dan MySQL. Sistem ini mendukung pengelolaan data buku, anggota, guru, peminjaman, pengembalian, serta fitur backup database.
+Ini adalah proyek **Sistem Manajemen Perpustakaan Digital** berbasis web yang dibangun menggunakan PHP dan MySQL. Sistem ini mendukung pengelolaan data buku, anggota, guru, peminjaman, pengembalian.
 
 ## Fitur Utama
 
@@ -8,7 +8,6 @@ Ini adalah proyek **Sistem Manajemen Perpustakaan Digital** berbasis web yang di
 - **Manajemen Anggota & Guru**: Kelola data anggota (siswa) dan guru.
 - **Peminjaman & Pengembalian**: Catat transaksi peminjaman dan pengembalian buku.
 - **Kunjungan**: Monitoring kunjungan anggota dan guru ke perpustakaan.
-- **Backup Database**: Ekspor database ke file SQL untuk backup.
 - **Manajemen User/Admin**: Kelola akun admin.
 
 ## Struktur Database
@@ -23,7 +22,7 @@ Struktur database dapat ditemukan pada file [`database/cp.sql`](database/cp.sql)
 
 1. **Clone atau Download Proyek**
    ```bash
-   git clone https://github.com/username/nama-repo.git
+   git clone https://github.com/andrast32/project.git
    ```
 
 2. **Import Database**
@@ -41,11 +40,6 @@ Struktur database dapat ditemukan pada file [`database/cp.sql`](database/cp.sql)
    - Letakkan folder proyek di dalam direktori web server (misal: `c:\laragon\www\project`).
    - Akses melalui browser: `http://localhost/project`
 
-## Fitur Backup Database
-
-- Untuk melakukan backup database, gunakan menu **Backup** pada aplikasi.
-- File backup akan dihasilkan dalam format `.sql` dan dapat diunduh langsung.
-
 ## Catatan
 
 - Pastikan ekstensi PHP seperti `mysqli` sudah aktif.
@@ -62,4 +56,4 @@ Proyek ini menggunakan lisensi [MIT](LICENSE).
 
 ---
 
-**Dibuat dengan 10 kopi**
+**Dibuat andrast**
