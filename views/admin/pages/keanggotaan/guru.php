@@ -126,7 +126,7 @@
             </div>
 
             <div class="modal-footer">
-                <button onclick="printDiv('print-area-<?php echo $data['id_guru'] ?>')" class="btn btn-primary">
+                <button onclick="printDiv('print-area-<?php echo $data['id_guru'] ?>', 'print-<?php echo $data['id_guru'] ?>')" class="btn btn-primary">
                     <i class="fas fa-print"></i> Cetak
                 </button>
             </div>
@@ -260,13 +260,15 @@
 
 <script>
     function printDiv(divId) {
-        var content = document.getElementById(divId).innerHTML;
-        var original = document.body.innerHTML;
-        document.body.innerHTML = content;
+        var printContents = document.getElementById(divId).innerHTML;
+        var originalContents = document.body.innerHTML;
+        document.body.innerHTML = printContents;
         window.print();
-        document.body.innerHTML = original;
+        document.body.innerHTML = originalContents;
+        location.reload();
     }
 </script>
+
 
 <script>
     function resetPassword(id_guru) {

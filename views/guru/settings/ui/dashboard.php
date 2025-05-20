@@ -205,21 +205,17 @@
 
 <script>
     function printAndClose(printId, modalId) {
-        // Ambil isi yang akan dicetak
         var printContents = document.getElementById(printId).innerHTML;
         var originalContents = document.body.innerHTML;
 
-        // Ganti body dengan isi cetakan
         document.body.innerHTML = printContents;
         window.print();
 
-        // Kembalikan isi halaman
         document.body.innerHTML = originalContents;
 
-        // Reload ulang agar tampilan normal + tutup modal
         setTimeout(function () {
-            $('#' + modalId).modal('hide'); // Tutup modal spesifik
-            location.reload(); // reload agar tampilan kembali seperti semula
+            $('#' + modalId).modal('hide');
+            location.reload();
         }, 500);
     }
 </script>

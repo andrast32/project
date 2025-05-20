@@ -145,7 +145,7 @@
                                     $active = ($i == 0) ? 'active' : '';
                                     echo '
                                     <div class="carousel-item '.$active.'">
-                                        <img src="/project/templates/uploads/buku/'.$dt_buku['foto'].'" class="d-block w-100" alt="Buku '.$dt_buku['id_buku'].'">
+                                        <img src="/project/templates/uploads/buku/'.$dt_buku['foto'].'" class="d-block img-fluid w-100 object-fit-cover" alt="Buku '.$dt_buku['id_buku'].'" style="height: 500px;">
                                     </div>';
                                     $i++;
                                 }

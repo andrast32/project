@@ -13,7 +13,7 @@
 
                 $kode_buku      = $_POST['kode_buku'];
                 $judul          = $_POST['judul'];
-                $judul          = $_POST['kategori'];
+                $kategori       = $_POST['kategori'];
                 $deskripsi      = $_POST['deskripsi'];
                 $penulis        = $_POST['penulis'];
                 $penerbit       = $_POST['penerbit'];

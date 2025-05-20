@@ -130,7 +130,7 @@
                                         while ($dt_buku = mysqli_fetch_array($buku)) {
                                     ?>
                                         <div class="swiper-slide">
-                                        <img src="templates/uploads/buku/<?php echo $dt_buku['foto']?>" alt="Image" class="img-fluid sm-2">
+                                        <img src="templates/uploads/buku/<?php echo $dt_buku['foto']?>" alt="Image" class="img-fluid lg-2" style="height: 550px; width: 500px; margin-left: 100px;">
                                         </div>
                                     <?php } ?>
                                 </div>
@@ -165,11 +165,31 @@
 
                             <div class="col-sm-12 col-md-5 col-lg-4 col-xl-4 order-lg-2 offset-xl-1 mb-4">
                                 <div class="img-wrap text-center text-md-left" data-aos="fade-up" data-aos-delay="100">
-                                    <div class="img">
-                                        <img src="templates/UI_user/img/bg1.jpg" alt="circle image" class="img-fluid">
+                                    <div class="swiper mySwiper">
+                                        <div class="swiper-wrapper">
+
+                                            <div class="swiper-slide">
+                                                <img src="templates/UI_user/img/bg1.jpg" alt="Image" class="img-fluid">
+                                            </div>
+
+                                            <div class="swiper-slide">
+                                                <img src="templates/UI_user/img/bg2.jpg" alt="Image" class="img-fluid">
+                                            </div>
+
+                                            <div class="swiper-slide">
+                                                <img src="templates/UI_user/img/bg3.jpg" alt="Image" class="img-fluid">
+                                            </div>
+
+                                            <div class="swiper-slide">
+                                                <img src="templates/UI_user/img/bg4.jpg" alt="Image" class="img-fluid">
+                                            </div>
+
+                                        </div>
+                                        <div class="swiper-pagination"></div>
                                     </div>
                                 </div>
                             </div>
+
 
                             <div class="offset-md-0 offset-lg-1 col-sm-12 col-md-5 col-lg-5 col-xl-4" data-aos="fade-up">
                                 <div class="px-3">
@@ -285,6 +305,23 @@
 
         <!-- Main JS File -->
         <script src="templates/UI_user/js/main.js"></script>
+
+        <script>
+            var swiper = new Swiper(".mySwiper", {
+                    loop: true,
+                    spaceBetween: 20,
+                    slidesPerView: 1, // bisa ganti jadi 2 atau 3 sesuai kebutuhan
+                    pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                },
+                autoplay: {
+                    delay: 3000,
+                    disableOnInteraction: false,
+                },
+            });
+        </script>
+
 
     </body>
 

@@ -50,7 +50,7 @@
                                         <td align="center" style="width: 10px;"><?php echo $data['kode_rak']?></td>
                                         <td align="center" style="width: 10px;"><?php echo $data['stok']?></td>
                                         <td align="center" style="width: 10px;">
-                                            <img src="/project/templates/uploads/buku/<?php echo $data['foto']?>" alt="<?php echo $data['foto']?>" width="130px" height="100px">
+                                            <img src="/project/templates/uploads/buku/<?php echo $data['foto']?>" alt="<?php echo $data['foto']?>" width="80px" height="auto">
                                         <td align="center" style="width: 10px;">
                                             <button class="btn btn-warning mt-2 mr-1" data-toggle="modal" data-target="#edit-<?php echo $data['id_buku']?>">
                                                 <i class="fas fa-edit"></i>
@@ -103,7 +103,7 @@
                             <select name="kategori" id="kategori" class="form-control" required>
 
                                 <option value="">Pilih Kategori buku</option>
-                                <option value="Buku Pelajaran">Buku pelajaran</option>
+                                <option value="Modul Ajar">Modul Ajar</option>
                                 <option value="Komik">Komik</option>
                                 <option value="Novel">Novel</option>
 
@@ -210,7 +210,7 @@
                             <select name="kategori" id="kategori" class="form-control" required>
 
                                 <option value="">Pilih Kategori buku</option>
-                                <option value="Buku Pelajaran" <?php if($e['kategori'] == 'Buku Pelajaran') echo 'selected'; ?> >Buku pelajaran</option>
+                                <option value="Modul Ajar" <?php if($e['kategori'] == 'Modul Ajar') echo 'selected'; ?> >Modul Ajar</option>
                                 <option value="Komik" <?php if($e['kategori'] == 'Komik') echo 'selected'; ?> >Komik</option>
                                 <option value="Novel" <?php if($e['kategori'] == 'Novel') echo 'selected'; ?> >Novel</option>
 
@@ -267,7 +267,7 @@
                                 <small class="text-danger">* Kosongkan jika tidak ingin mengubah foto</small>
                                 <br>
                                 <p class="text-info">Foto Sebelum Di edit</p>
-                                <img src="/project/templates/uploads/buku/<?php echo $e['foto']?>" alt="<?php echo $e['foto']?>" width="180px" height="150px">
+                                <img src="/project/templates/uploads/buku/<?php echo $e['foto']?>" alt="<?php echo $e['foto']?>" width="175px" height="auto">
                             </div>
 
                             <div class="modal-footer">

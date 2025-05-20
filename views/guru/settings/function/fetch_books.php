@@ -40,7 +40,9 @@ $total_pages = ceil($total_row['total'] / $limit);
                             <h4><?php echo $d['kode_buku'] ?> <br> <?php echo $d['judul'] ?></h4>
                             <div class="social-links">
                                 <a href="#">Rak: <?php echo $d['kode_rak'] ?></a> |
-                                <a href="#"><?php echo $d['kategori'] ?></a>
+                                <a href="#"><?php echo $d['kategori'] ?></a> <br>
+                                <a href="#">Jumlah Pinjam: <?php echo $d['jumlah'] ?></a><br>
+                                <a href="#">Tanggal Pinjam: <?php echo $d['tanggal_pinjam'] ?></a>
                             </div>
                             <p>Kembalikan sebelum tanggal <?php echo $d['tanggal_kembali'] ?></p>
                         <?php endwhile; ?>
