@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Error 404 | page Not Found</title>
+        <title>Error 404 | Page Not Found</title>
         <link href="/project/templates/UI_user/img/icon.png" rel="icon">
         <link href="/project/templates/UI_user/css/404.css" rel="stylesheet">
 
