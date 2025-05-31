@@ -98,7 +98,7 @@
 
     setInterval(function () {
         idleTime++;
-        if (idleTime >= 12) {
+        if (idleTime >= 1200) { // 20 minutes
             Swal.fire({
                 icon                : 'warning',
                 title               : 'Sesi Berakhir',
