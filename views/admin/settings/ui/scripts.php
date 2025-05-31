@@ -77,7 +77,7 @@
                     text                : 'Session Anda telah berakhir. Silakan login kembali.',
                     showConfirmButton   : true
                 }).then(function() {
-                    window.location.href = 'settings/logout.php';
+                    window.location.href = '../controller/logout.php';
                 });
             </script>
         ";
@@ -98,14 +98,14 @@
 
     setInterval(function () {
         idleTime++;
-        if (idleTime >= 1200) {
+        if (idleTime >= 12) {
             Swal.fire({
                 icon                : 'warning',
                 title               : 'Sesi Berakhir',
                 text                : 'Sesi anda telah berakhir. Silakan login kembali.',
                 showConfirmButton   : true
             }).then(function() {
-                window.location.href = 'settings/logout.php';
+                window.location.href = '../controller/logout.php';
             });
         }
     }, 1000);
