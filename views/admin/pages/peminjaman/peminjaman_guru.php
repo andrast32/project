@@ -404,7 +404,7 @@
                         </div>
 
                         <div class="widget-user-image">
-                            <img src="/project/templates/uploads/buku/<?php echo $db['foto']?>" alt="Avatar">
+                            <img src="/project/templates/uploads/buku/<?php echo $db['foto']?>" style="max-width: 80%;" alt="Avatar">
                         </div>
 
                         <div class="card-footer">

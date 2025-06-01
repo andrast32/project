@@ -412,7 +412,7 @@
                         </div>
 
                         <div class="widget-user-image">
-                            <img src="/project/templates/uploads/buku/<?php echo $db['foto']?>" alt="Avatar">
+                            <img src="/project/templates/uploads/buku/<?php echo $db['foto']?>" alt="Avatar" style="max-width: 80%;">
                         </div>
 
                         <div class="card-footer">
