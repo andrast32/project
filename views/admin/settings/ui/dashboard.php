@@ -145,7 +145,7 @@
                                     $active = ($i == 0) ? 'active' : '';
                                     echo '
                                     <div class="carousel-item '.$active.'">
-                                        <img src="/project/templates/uploads/buku/'.$dt_buku['foto'].'" class="d-block img-fluid w-100 object-fit-cover" alt="Buku '.$dt_buku['id_buku'].'" style="height: 500px;">
+                                        <img src="/project/templates/uploads/buku/'.$dt_buku['foto'].'" class="d-block img-fluid w-100 object-fit-cover" alt="Cover of the book titled '.$dt_buku['judul'].' by '.$dt_buku['penulis'].'. The cover is displayed in a digital library carousel with a welcoming and educational atmosphere. If any text appears on the cover, it is not transcribed here." style="max-height: 700px !important;">
                                     </div>';
                                     $i++;
                                 }
