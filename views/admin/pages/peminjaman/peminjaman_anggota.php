@@ -308,7 +308,7 @@
 
                                                 <div class="form-group">
                                                     <label for="jumlah">Jumlah <span class="text-danger">*</span></label>
-                                                    <input type="number" name="jumlah" id="jumlah" class="form-control" value="1" placeholder="Masukkan jumlah buku yang di pinjam" required>
+                                                    <input type="number" readonly name="jumlah" id="jumlah" class="form-control" value="1" placeholder="Masukkan jumlah buku yang di pinjam" required>
                                                 </div>
 
                                                 <div class="form-group">
