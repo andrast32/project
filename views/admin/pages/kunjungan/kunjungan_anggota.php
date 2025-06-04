@@ -195,7 +195,8 @@
                             </thead>
                             <tbody>
                                 <?php
-                                    $kunjungan = $mysqli->query("SELECT * FROM kunjungan_anggota JOIN anggota ON kunjungan_anggota.id_siswa = anggota.id_siswa");
+                                    $kunjungan = $mysqli->query("SELECT * FROM kunjungan_anggota JOIN anggota ON kunjungan_anggota.id_siswa = anggota.id_siswa 
+                                        ORDER BY kunjungan_anggota.id_kunjungan DESC");
 
                                     $no = 0;
                                     while ($data = mysqli_fetch_array($kunjungan)) {

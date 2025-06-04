@@ -27,7 +27,7 @@
 
                             <tbody>
                                 <?php
-                                    $user = $mysqli->query ("SELECT * FROM user ORDER BY id_user");
+                                    $user = $mysqli->query ("SELECT * FROM user ORDER BY id_user ASC");
 
                                     $no = 0;
                                     while ($data = mysqli_fetch_array($user)) {

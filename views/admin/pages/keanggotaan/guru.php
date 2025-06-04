@@ -28,7 +28,7 @@
 
                             <tbody>
                                 <?php
-                                $guru = $mysqli->query("SELECT * FROM guru WHERE id_guru");
+                                $guru = $mysqli->query("SELECT * FROM guru WHERE id_guru ORDER BY nip ASC");
                                 $no = 0;
                                 while ($data = mysqli_fetch_array($guru)) {
                                     $no++

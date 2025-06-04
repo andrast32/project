@@ -25,7 +25,7 @@
 
                             <tbody>
                                 <?php
-                                $kelas = $mysqli->query("SELECT * FROM data_kelas join guru ON data_kelas.id_guru = guru.id_guru ORDER BY id_kelas");
+                                $kelas = $mysqli->query("SELECT * FROM data_kelas join guru ON data_kelas.id_guru = guru.id_guru ORDER BY kelas ASC, indeks_kelas ASC");
                                 $no = 0;
                                 while ($data = mysqli_fetch_array($kelas)) {
                                     $no++

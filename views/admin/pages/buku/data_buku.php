@@ -34,7 +34,7 @@
                             <tbody>
                                 <?php
                                     $no = 1;
-                                    $buku = $mysqli->query("SELECT * FROM data_buku ORDER BY id_buku");
+                                    $buku = $mysqli->query("SELECT * FROM data_buku ORDER BY id_buku ASC");
                                     while ($data = mysqli_fetch_array($buku)) {
                                 ?>
                                     <tr>

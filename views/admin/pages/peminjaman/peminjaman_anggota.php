@@ -344,7 +344,7 @@
 
                             <tbody>
                                 <?php 
-                                    $a_pinjam = $mysqli->query("SELECT * FROM peminjaman_anggota JOIN anggota ON peminjaman_anggota.id_siswa = anggota.id_siswa JOIN data_buku ON peminjaman_anggota.id_buku = data_buku.id_buku");
+                                    $a_pinjam = $mysqli->query("SELECT * FROM peminjaman_anggota JOIN anggota ON peminjaman_anggota.id_siswa = anggota.id_siswa JOIN data_buku ON peminjaman_anggota.id_buku = data_buku.id_buku ORDER BY peminjaman_anggota.id_peminjaman DESC");
 
                                     $no = 0;
                                     while ($data = mysqli_fetch_array($a_pinjam)) {

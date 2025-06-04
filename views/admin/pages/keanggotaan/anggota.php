@@ -28,7 +28,7 @@
 
                             <tbody>
                                 <?php
-                                $anggota = $mysqli->query("SELECT * FROM anggota join data_kelas ON anggota.id_kelas = data_kelas.id_kelas");
+                                $anggota = $mysqli->query("SELECT * FROM anggota join data_kelas ON anggota.id_kelas = data_kelas.id_kelas ORDER BY nis ASC");
                                 $no = 0;
                                 while ($data = mysqli_fetch_array($anggota)) {
                                     $no++

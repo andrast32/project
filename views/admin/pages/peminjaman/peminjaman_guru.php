@@ -336,7 +336,7 @@
 
                             <tbody>
                                 <?php 
-                                    $a_pinjam = $mysqli->query("SELECT * FROM peminjaman_guru JOIN guru ON peminjaman_guru.id_guru = guru.id_guru JOIN data_buku ON peminjaman_guru.id_buku = data_buku.id_buku");
+                                    $a_pinjam = $mysqli->query("SELECT * FROM peminjaman_guru JOIN guru ON peminjaman_guru.id_guru = guru.id_guru JOIN data_buku ON peminjaman_guru.id_buku = data_buku.id_buku ORDER BY id_peminjaman DESC");
 
                                     $no = 0;
                                     while ($data = mysqli_fetch_array($a_pinjam)) {
