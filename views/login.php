@@ -66,7 +66,7 @@
                         <div class="row">
 
                             <div class="col-6">
-                                <a href="/project/index.php" class="btn btn-block">
+                                <a href="/project/" class="btn btn-block">
                                     Kembali <i class="fas fa-backward"></i>
                                 </a>
                             </div>

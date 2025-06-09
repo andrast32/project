@@ -27,7 +27,7 @@
                 $_SESSION['foto']               = $row_user['foto'];
 
                 if ($row_user['level'] == 'Admin') {
-                    header("Location: admin/index.php");
+                    header("Location: /project/views/admin/index");
                 }
                 exit();
             } else {
@@ -55,7 +55,7 @@
                     $_SESSION['foto']               = $row_anggota['foto'];
                     $_SESSION['level']              = $row_anggota['level'];
 
-                    header("Location: user/index.php");
+                    header("Location: /project/views/user/index");
                     exit();
                 } else {
                     $error_message = "Username atau Password yang anda masukan salah.";
@@ -78,7 +78,7 @@
                         $_SESSION['foto']               = $row_guru['foto'];
                         $_SESSION['level']              = $row_guru['level'];
 
-                        header("Location: guru/index.php");
+                        header("Location: /project/views/guru/index");
                         exit();
                     } else {
                         $error_message = "Username atau Password yang anda masukan salah.";

@@ -31,7 +31,7 @@
 
                 <div class="dropdown-divider"></div>
 
-                <a href="../controller/logout.php" class="dropdown-item">
+                <a href="/project/views/controller/logout" class="dropdown-item">
                     <i class="fas fa-power-off mr-2"></i> Logout
                 </a>
 

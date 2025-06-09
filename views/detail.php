@@ -53,9 +53,9 @@
 
                             <nav id="navmenu" class="navmenu">
                                 <ul>
-                                    <li><a href="/project/index.php"><i class="fas fa-home" style="margin-right: 5px;"></i> Home</a></li>
-                                    <li><a href="#" class="active"><i class="fas fa-book-open" style="margin-right: 5px;"></i> Daftar Buku</a></li>
-                                    <li><a href="login.php"><i class="fas fa-sign-in-alt" style="margin-right: 5px;"></i> Login</a></li>
+                                    <li><a href="/project/"><i class="fas fa-home" style="margin-right: 5px;"></i> Home</a></li>
+                                    <li><a href="/project/views/daftar_buku" class="active"><i class="fas fa-book-open" style="margin-right: 5px;"></i> Daftar Buku</a></li>
+                                    <li><a href="/project/views/login"><i class="fas fa-sign-in-alt" style="margin-right: 5px;"></i> Login</a></li>
                                 </ul>
                                 <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
                             </nav>
@@ -67,7 +67,7 @@
 
                         <div class="page-title light-background">
                             <div class="container">
-                                <a href="daftar_buku.php" class="bi bi-arrow-left-circle-fill"> Kembali</a>
+                                <a href="/project/views/daftar_buku" class="bi bi-arrow-left-circle-fill"> Kembali</a>
                             </div>
                         </div>
 

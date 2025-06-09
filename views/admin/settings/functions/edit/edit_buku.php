@@ -25,6 +25,30 @@
                 $foto           = isset($_FILES['foto']) ? $_FILES['foto']['name']: '';
                 $tempFoto       = isset($_FILES['foto']) ? $_FILES['foto']['tmp_name']: '';
 
+                $stmt_cek = $mysqli->prepare("SELECT COUNT(*) FROM data_buku WHERE kode_buku = ? AND id_buku != ?");
+                $stmt_cek->bind_param("si", $kode_buku, $id_buku);
+                $stmt_cek->execute();
+                $stmt_cek->bind_result($count);
+                $stmt_cek->fetch();
+                $stmt_cek->close();
+
+                if ($count > 0) {
+                    echo "
+                        <script>
+                            Swal.fire({
+                                icon                : 'error',
+                                title               : 'Oops...',
+                                text                : 'Kode buku sudah digunakan oleh buku lain!',
+                                showConfirmButton   : false,
+                                timer               : 1500
+                            }).then(function() {
+                                window.location.href = '?buku=data_buku';
+                            });
+                        </script>
+                    ";
+                    exit;
+                }
+
                 $stmt = $mysqli->prepare("UPDATE data_buku SET kode_buku = ?, judul = ?, kategori = ?, deskripsi = ?, penulis = ?, penerbit = ?, tahun_terbit = ?, kode_rak = ?, stok = ? WHERE id_buku = ?");
                 $stmt->bind_param("sssssssssi", $kode_buku, $judul, $kategori, $deskripsi, $penulis, $penerbit, $tahun_terbit, $kode_rak, $stok, $id_buku);
 

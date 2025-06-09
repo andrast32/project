@@ -46,9 +46,9 @@
 
                 <nav id="navmenu" class="navmenu">
                     <ul>
-                        <li><a href="../index.php"><i class="fas fa-home" style="margin-right: 5px;"></i> Home</a></li>
-                        <li><a href="#" class="active"><i class="fas fa-book-open" style="margin-right: 5px;"></i> Daftar Buku</a></li>
-                        <li><a href="login.php"><i class="fas fa-sign-in-alt" style="margin-right: 5px;"></i> Login</a></li>
+                        <li><a href="/project/"><i class="fas fa-home" style="margin-right: 5px;"></i> Home</a></li>
+                        <li><a href="/project/views/daftar_buku" class="active"><i class="fas fa-book-open" style="margin-right: 5px;"></i> Daftar Buku</a></li>
+                        <li><a href="/project/views/login"><i class="fas fa-sign-in-alt" style="margin-right: 5px;"></i> Login</a></li>
                     </ul>
                     <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
                 </nav>
@@ -96,7 +96,7 @@
                                     </div>
 
                                     <h2 class="title">
-                                        <a href="detail.php?id_buku=<?php echo $data['id_buku']; ?>">
+                                        <a href="detail?id_buku=<?php echo $data['id_buku']; ?>">
                                             
                                             <?php echo $data['kode_buku'] ?> | 
                                             <?php echo $data['judul'] ?>

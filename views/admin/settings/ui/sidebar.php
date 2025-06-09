@@ -25,7 +25,7 @@
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
 
                 <li class="nav-item">
-                    <a href="index.php" class="nav-link <?php echo ($page == 'index') ? 'active' : ''; ?>">
+                    <a href="index" class="nav-link <?php echo ($page == 'index') ? 'active' : ''; ?>">
                         <i class="nav-icon fas fa-home"></i>
                         <p>Home</p>
                     </a>

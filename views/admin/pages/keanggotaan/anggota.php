@@ -28,7 +28,7 @@
 
                             <tbody>
                                 <?php
-                                $anggota = $mysqli->query("SELECT * FROM anggota join data_kelas ON anggota.id_kelas = data_kelas.id_kelas ORDER BY nis ASC");
+                                $anggota = $mysqli->query("SELECT anggota.*, data_kelas.kelas, data_kelas.indeks_kelas FROM anggota LEFT JOIN data_kelas ON anggota.id_kelas = data_kelas.id_kelas ORDER BY anggota.nis ASC");
                                 $no = 0;
                                 while ($data = mysqli_fetch_array($anggota)) {
                                     $no++
@@ -120,7 +120,7 @@
                         <select name="id_kelas" id="id_kelas" required class="form-control">
                             <option value="">Pilih Kelas</option>
                             <?php
-                                $kelas = $mysqli->query("SELECT * FROM data_kelas ORDER BY id_kelas");
+                                $kelas = $mysqli->query("SELECT * FROM data_kelas ORDER BY kelas ASC, indeks_kelas ASC");
                                 while ($k = mysqli_fetch_array($kelas)) {
                             ?>
                                 <option value="<?php echo $k['id_kelas']?>">
@@ -161,7 +161,7 @@
 </div>
 
 <?php
-    $anggota = $mysqli->query("SELECT * FROM anggota JOIN data_kelas ON anggota.id_kelas = data_kelas.id_kelas");
+    $anggota = $mysqli->query("SELECT anggota.*, data_kelas.kelas, data_kelas.indeks_kelas FROM anggota LEFT JOIN data_kelas ON anggota.id_kelas = data_kelas.id_kelas");
     while ($data = mysqli_fetch_array($anggota)) {
 ?>
 <div class="modal fade" id="print-<?php echo $data['id_siswa'] ?>">
@@ -221,7 +221,7 @@
 <?php } ?>
 
 <?php 
-    $anggota = $mysqli->query("SELECT * FROM anggota JOIN data_kelas ON anggota.id_kelas = data_kelas.id_kelas");
+    $anggota = $mysqli->query("SELECT anggota.*, data_kelas.kelas, data_kelas.indeks_kelas FROM anggota LEFT JOIN data_kelas ON anggota.id_kelas = data_kelas.id_kelas");
 
     while ($ea = mysqli_fetch_array($anggota)) {
 ?>
@@ -261,7 +261,7 @@
                                 </option>
 
                                 <?php
-                                    $dkelas = $mysqli->query("SELECT * FROM data_kelas ORDER BY id_kelas");
+                                    $dkelas = $mysqli->query("SELECT * FROM data_kelas ORDER BY kelas ASC, indeks_kelas ASC");
                                     while ($dk = mysqli_fetch_array($dkelas)) {
                                 ?>
                                     <option value="<?php echo $dk['id_kelas']?>">

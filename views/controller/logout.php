@@ -58,7 +58,7 @@
 
             } else {
                 sessionStorage.removeItem("logoutReloaded");
-                window.location.href = "/project/index.php";
+                window.location.href = "/project/index";
             }
         </script>
 

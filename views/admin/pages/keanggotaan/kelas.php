@@ -25,7 +25,7 @@
 
                             <tbody>
                                 <?php
-                                $kelas = $mysqli->query("SELECT * FROM data_kelas join guru ON data_kelas.id_guru = guru.id_guru ORDER BY kelas ASC, indeks_kelas ASC");
+                                $kelas = $mysqli->query("SELECT data_kelas.*, guru.id_guru, guru.nama_guru FROM data_kelas LEFT JOIN guru ON data_kelas.id_guru = guru.id_guru ORDER BY kelas ASC, indeks_kelas ASC");
                                 $no = 0;
                                 while ($data = mysqli_fetch_array($kelas)) {
                                     $no++
@@ -149,7 +149,7 @@
 </div>
 
 <?php
-    $k = $mysqli->query("SELECT * FROM data_kelas JOIN guru ON data_kelas.id_guru = guru.id_guru");
+    $k = $mysqli->query("SELECT data_kelas.*, guru.id_guru, guru.nama_guru FROM data_kelas LEFT JOIN guru ON data_kelas.id_guru = guru.id_guru");
     while ($eke = mysqli_fetch_array($k)) {
     ?>
     <div class="modal fade" id="modal-edit-kelas-<?php echo $eke['id_kelas']?>">

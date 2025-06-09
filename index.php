@@ -76,9 +76,9 @@
 
                 <nav id="navmenu" class="navmenu">
                     <ul>
-                        <li><a href="#" class="active"><i class="fas fa-home" style="margin-right: 5px;"></i> Home</a></li>
-                        <li><a href="views/daftar_buku.php"><i class="fas fa-book-open" style="margin-right: 5px;"></i> Daftar Buku</a></li>
-                        <li><a href="views/login.php"><i class="fas fa-sign-in-alt" style="margin-right: 5px;"></i> Login</a></li>
+                        <li><a href="/project/" class="active"><i class="fas fa-home" style="margin-right: 5px;"></i> Home</a></li>
+                        <li><a href="/project/views/daftar_buku"><i class="fas fa-book-open" style="margin-right: 5px;"></i> Daftar Buku</a></li>
+                        <li><a href="/project/views/login"><i class="fas fa-sign-in-alt" style="margin-right: 5px;"></i> Login</a></li>
                     </ul>
                     <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
                 </nav>
