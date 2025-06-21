@@ -207,7 +207,7 @@
                                     </p>
 
                                     <p>
-                                        <a href="controller/login.php" class="btn-get-started">Get Started</a>
+                                        <a href="/project/views/login" class="btn-get-started">Get Started</a>
                                     </p>
 
                                 </div>

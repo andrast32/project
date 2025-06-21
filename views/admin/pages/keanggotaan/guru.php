@@ -93,7 +93,7 @@
             </div>
 
             <div class="modal-body" id="print-area-<?php echo $data['id_guru'] ?>">
-                <div style="width: 12cm; height: 6.5cm; border: 2px solid #333; padding: 20px; font-family: Arial, sans-serif; background: #fff; position: relative;">
+                <div style="width: 13cm; height: 7.5cm; border: 2px solid #333; padding: 20px; font-family: Arial, sans-serif; background: #fff; position: relative;">
 
                     <div style="display: flex; align-items: center; margin-bottom: 10px;">
                         <img src="/project/templates/UI_user/img/logo.png" width="50" style="margin-right: 10px;">
@@ -110,6 +110,7 @@
                         <div style="font-size: 13px; line-height: 1.5;">
                             <p><strong>NIP:</strong> <?php echo $data['nip'] ?></p>
                             <p><strong>Nama:</strong> <?php echo $data['nama_guru'] ?></p>
+                            <p><strong>alamat:</strong> <?php echo $data['alamat'] ?></p>
                             <p><strong>No. Telp:</strong> <?php echo $data['no_telp'] ?></p>
                         </div>
 

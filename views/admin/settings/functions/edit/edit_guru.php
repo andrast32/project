@@ -15,6 +15,30 @@
                 $foto           = isset($_FILES['foto']) ? $_FILES['foto']['name'] : '';
                 $tempFoto       = isset($_FILES['foto']) ? $_FILES['foto']['tmp_name'] : '';
 
+                $stmt_cek = $mysqli->prepare("SELECT COUNT(*) FROM guru WHERE nip = ?");
+                $stmt_cek->bind_param("s", $nip);
+                $stmt_cek->execute();
+                $stmt_cek->bind_result($count);
+                $stmt_cek->fetch();
+                $stmt_cek->close();
+
+                if ($count > 0) {
+                    echo "
+                        <script>
+                            Swal.fire({
+                                icon                : 'error',
+                                title               : 'Oops...',
+                                text                : 'NIP sudah dipakai, silahkan gunakan NIP lain, atau hubungi admin untuk memperbaikinya',
+                                showConfirmButton   : false,
+                                timer               : 1500
+                            }).then(function() {
+                                window.location.href = '?guru=guru';
+                            });
+                        </script>
+                    ";
+                    exit;
+                }
+
                 $stmt = $mysqli->prepare("UPDATE guru SET nama_guru = ?, alamat = ?, no_telp = ?, nip = ? WHERE id_guru = ?");
                 $stmt->bind_param("ssssi", $nama_guru, $alamat, $no_telp, $nip, $id_guru);
 

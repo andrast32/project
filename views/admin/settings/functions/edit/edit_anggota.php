@@ -17,6 +17,31 @@
                 $foto              = isset($_FILES['foto']) ? $_FILES['foto']['name']: '';
                 $tempFoto          = isset($_FILES['foto']) ? $_FILES['foto']['tmp_name']: '';
 
+                $stmt_cek = $mysqli->prepare("SELECT COUNT(*) FROM anggota WHERE nis = ?");
+                $stmt_cek->bind_param("s", $nis);
+                $stmt_cek->execute();
+                $stmt_cek->bind_result($count);
+                $stmt_cek->fetch();
+                $stmt_cek->close();
+
+                if ($count > 0) {
+
+                    echo "
+                        <script>
+                            Swal.fire({
+                                icon                :   'error',
+                                title               :   'Oops...',
+                                text                :   'NIS sudah dipakai, silakan gunakan NIG yang lain!',
+                                showConfirmButton   :   false,
+                                timer               :   1500
+                            }).then(function() {
+                                window.location.href = '?anggota=anggota';
+                            });
+                        </script>
+                    ";
+                    exit;
+                }
+
                 $stmt = $mysqli->prepare("UPDATE anggota SET nama_anggota = ?, id_kelas = ?, alamat = ?, no_telp = ?,nis = ? WHERE id_siswa = ?");
                 $stmt->bind_param("sssssi", $nama_anggota, $id_kelas, $alamat, $no_telp, $nis, $id_siswa);
 

@@ -176,7 +176,7 @@
             </div>
 
             <div class="modal-body" id="print-area-<?php echo $data['id_siswa'] ?>">
-                <div style="width: 12cm; height: 6.5cm; border: 2px solid #333; padding: 20px; font-family: Arial, sans-serif; background: #fff; position: relative;">
+                <div style="width: 13cm; height: 7.5cm; border: 2px solid #333; padding: 20px; font-family: Arial, sans-serif; background: #fff; position: relative;">
 
                     <div style="display: flex; align-items: center; margin-bottom: 10px;">
                         <img src="/project/templates/UI_user/img/logo.png" width="50" style="margin-right: 10px;">
@@ -194,6 +194,7 @@
                             <p><strong>NIS:</strong> <?php echo $data['nis'] ?></p>
                             <p><strong>Nama:</strong> <?php echo $data['nama_anggota'] ?></p>
                             <p><strong>Kelas:</strong> <?php echo $data['kelas'] ?> <?php echo $data['indeks_kelas'] ?></p>
+                            <p><strong>alamat:</strong> <?php echo $data['alamat'] ?></p>
                             <p><strong>No. Telp:</strong> <?php echo $data['no_telp'] ?></p>
                         </div>
 
