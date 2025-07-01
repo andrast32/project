@@ -67,23 +67,6 @@
     })
 </script>
 
-<?php
-    if (isset($_GET['session_expired']) && $_GET['session_expired'] == 'true') {
-        echo "
-            <script>
-                Swal.fire({
-                    icon                : 'warning',
-                    title               : 'Session Berakhir',
-                    text                : 'Session Anda telah berakhir. Silakan login kembali.',
-                    showConfirmButton   : true
-                }).then(function() {
-                    window.location.href = '../controller/logout.php';
-                });
-            </script>
-        ";
-    }
-?>
-
 <script>
     let idleTime = 0;
 
@@ -103,9 +86,10 @@
                 icon                : 'warning',
                 title               : 'Sesi Berakhir',
                 text                : 'Sesi anda telah berakhir. Silakan login kembali.',
-                showConfirmButton   : true
+                showConfirmButton: false,
+                timer: 2000
             }).then(function() {
-                window.location.href = '../controller/logout.php';
+                window.location.href = '../controller/logout';
             });
         }
     }, 1000);

@@ -3,12 +3,12 @@
     session_start();
 
     if (!isset($_SESSION['username'])) {
-        header("Location: /project/views/login.php");
+        header("Location: /project/views/login");
         exit();
     }
 
     if ($_SESSION['level'] != 'Admin') {
-        header("Location: /project/404.php");
+        header("Location: /project/404");
     }
 
     $id_user_session = $_SESSION['username'];
