@@ -1,4 +1,6 @@
 <?php
+
+    session_name('perpus_digital');
     session_start();
 
     include "controller/connect.php";

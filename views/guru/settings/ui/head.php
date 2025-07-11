@@ -1,5 +1,6 @@
 <?php
 
+    session_name('perpus_digital');
     session_start();
     if (!isset($_SESSION['nip'])) {
         header("Location: /project/views/login.php");
